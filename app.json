@@ -1,0 +1,36 @@
+{
+  "pages":[
+  "pages/jianli/jianli",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/personaldata/personaldata",
+    "pages/upjianli/upjianli",
+    "pages/interested/interested",
+    "pages/phonelogin/phonelogin",
+    "pages/myadvantage/myadvantage"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "布洛克招聘",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/Position1.png",
+        "selectedIconPath": "images/Position.png",
+        "text": "职位"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/my_light.png",
+        "selectedIconPath": "images/my_light1.png",
+       
+        "text": "我的"
+      }
+    ],
+    "selectedColor":"#9233eb"
+  }
+}

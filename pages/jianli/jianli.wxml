@@ -1,0 +1,106 @@
+<view class='header'>
+  <view class='headerTitle'>
+    <view>{{username}}
+    <text bindtap='gotomyname'>编辑</text>
+    </view>
+    <view>{{userAg0}}</view>
+    <view class='phonenum'>
+      <image src='/images/phone.png'></image>
+      <text>{{phonenum}}</text>
+    </view>
+    <view class='weChatUserphone'>
+      <image src='/images/wechatblack.png'></image>
+      <text>{{weChatUserphone}}</text>
+    </view>
+  </view>
+  <image src='{{avatarUrl}}'></image>
+</view>
+<view class='wantedstatus' bindtap='wantedstatus'>{{wantedstatus}}</view>
+
+
+
+<view class='myadvantage'>
+<view class='title'>
+  <text></text>
+  <text>我的优势</text>
+  <text bindtap='gomyadvantage'>编辑</text>
+  </view>
+  <view class='myadvantagetext'>{{myadvantagetext}}</view>
+</view>
+
+
+
+<view class='myintention'>
+  <view class='title'>
+      <text></text>
+      <text>求职意向</text>
+  </view>
+  <view class='myintentionbody'>
+    <view>
+      <text>[北京]web前端</text>
+      <text>1k-2k</text>
+    </view>
+    <text>计算机软件</text>
+  </view>
+
+
+  <view class='myintentionadd'>  
+    <image src='/images/+.png'></image>
+    <text>添加求职期望</text>
+  </view>
+</view>
+
+
+<view class='workExperience'>
+ <view class='title'>
+    <text></text>
+    <text>工作经历</text>
+  </view>
+  <view class='workExperiencebody'>
+    <view class='companyname'>
+    <text>北京松鼠电电科技文化有限公司</text>
+    <navigator>编辑</navigator>
+    </view>
+
+    <view class='companypost'>
+    <text>技术部前端开发</text>
+    <text>2018.6.58-2015.8.56</text>
+    </view>
+
+    <view class='companycontent'>
+    内容：负责小程序的开发和迭代
+    </view>
+
+  </view>
+
+
+   <view class='myintentionadd'>  
+    <image src='/images/+.png'></image>
+    <text>添加工作经历</text>
+  </view>
+</view>
+
+
+
+<view class='ProjectExperience'>
+ <view class='title'>
+      <text></text>
+      <text>项目经验</text>
+  </view>
+  <view class='myintentionadd'>  
+    <image src='/images/+.png'></image>
+    <text>添加项目经验</text>
+  </view>
+</view>
+
+
+<view class='EducationalExperience'>
+ <view class='title'>
+      <text></text>
+      <text>教育经历</text>
+  </view>
+  <view class='myintentionadd'>  
+    <image src='/images/+.png'></image>
+    <text>添加教育经历</text>
+  </view>
+</view>

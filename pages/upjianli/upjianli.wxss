@@ -1,0 +1,17 @@
+/* pages/upjianli/upjianli.wxss */
+
+
+.notjianli{
+  width: 100%;
+
+}
+.notjianli view{
+  width: 80%;
+  border-radius: 50px;
+  background: #9233eb;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+}

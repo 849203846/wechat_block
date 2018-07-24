@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view bindtap='search' class='search'>
+  <input bindtap='gotosousuo' placeholder='点我搜索职位' />
+</view>
+
+<view class='banner'>
+  <swiper autoplay="true" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="8.6rem" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+<view class='positionItel'>
+  <text class='Title'>WEB高级前端开发工程师</text>
+  <text class='money'>1-2K</text>
+  <view class='body'>北京 | 5年 | 本科</view>
+  <view class='company'>
+    <image class='companyLogo' src='/images/interested.png' ></image>
+    <text class='companyname'>布洛克财经</text>
+  </view>
+</view>
+
+<view class='positionItel'>
+  <text class='Title'>WEB高级前端开发工程师</text>
+  <text class='money'>1-2K</text>
+  <view class='body'>北京 | 5年 | 本科</view>
+  <view class='company'>
+    <image class='companyLogo'src='/images/interested.png' ></image>
+    <text class='companyname'>布洛克财经</text>
+  </view>
+</view>
+
+<view class='positionItel'>
+  <text class='Title'>WEB高级前端开发工程师</text>
+  <text class='money'>1-2K</text>
+  <view class='body'>北京 | 5年 | 本科</view>
+  <view class='company'>
+    <image class='companyLogo' src='/images/interested.png'></image>
+    <text class='companyname'>布洛克财经</text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/upjianli/upjianli.wxml-->
+<view class='notjianli'>
+  <image src='/images/not'></image>
+
+  <view>立即上传</view>
+</view>
