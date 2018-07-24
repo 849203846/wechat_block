@@ -1,8 +1,9 @@
 {
   "pages":[
-  "pages/jianli/jianli",
+
     "pages/index/index",
     "pages/logs/logs",
+    "pages/jianli/jianli",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/interested/interested",
