@@ -76,7 +76,7 @@ Page({
   },
   gotojianli:function(){
     console.log(app.globalData.userInfo)
-    if (app.globalData.userInfo){
+    if (!app.globalData.userInfo){
       wx.navigateTo({
         url: '/pages/jianli/jianli',
       })
