@@ -25,6 +25,36 @@
       <text></text>
       <text>职位详情</text>
   </view>
+  <view class='description'>
+    <view class='descriptiontitle'>职位描述</view>
+    <view>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+  </view>
+
+
+  <view class='title'>
+      <text></text>
+      <text>技能标签</text>
+  </view>
+   <view class='SkillLbael'>虚拟化</view>
+
+  <view style='height:.36rem;background:#fafafa;margin-top:1rem;'></view>
+
+  <view class='company'>
+    <image src='/images/man.png' class='companylogo'></image>
+    <view class='companyname'>布洛克科技文化有限公司</view>
+    <view class='CompanyProfile'>移动互联网</view>
+  </view>
+  <view class='title'>
+      <text></text>
+      <text>工作地址</text>
+  </view>
+
+  <view class='WorkingRess'>
+    <text>北京市海淀区财智大厦</text>
+    <image src='/images/sanjiao.png'></image>
+  </view>
+
+
 </view>
 
 
@@ -32,6 +62,9 @@
 
 
 
+
+
+<view style='  height: 2.6rem;'></view>
 
 
 <view class='footer'>

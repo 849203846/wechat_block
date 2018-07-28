@@ -5,6 +5,7 @@
   border-top: 1px solid #cccccc;
   display: flex;
   bottom: 0;
+  background: white;
 }
 .footer image{
   width: 1.2rem;
@@ -122,4 +123,64 @@
   vertical-align: middle;
   float: right;
   padding-right: 1rem;
+}
+.description{
+  width: 90%;
+  margin: 0 auto;
+}
+.descriptiontitle{
+  margin-bottom: 2.2rem;
+}
+.SkillLbael{
+  display: inline-block;
+  border: 1px solid #c6c6c6;
+  text-align: center;
+  padding:.2rem .5rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+
+.company{
+  height: 4.5rem;
+  width: 90%;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  margin: 0 auto;
+}
+.companylogo{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin-top: .9rem;
+}
+.companyname{
+  position: absolute;
+  top: 0.9rem;
+  left: 3.2rem;
+
+}
+.CompanyProfile{
+    position: absolute;
+  top: 2.5rem;
+  left: 3.2rem;
+  font-size: .8rem;
+  color: #ababaB;
+}
+.WorkingRess{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 1.4rem;
+  border-bottom: 1rem solid #fafafa;
+}
+.WorkingRess text{
+  font-size: .8rem;
+  color: #ababaB
+
+}
+.WorkingRess image{
+  width: .4rem;
+  height: .7rem;
+  float: right;
+  margin-top: .4rem;
+  vertical-align: middle;
 }
