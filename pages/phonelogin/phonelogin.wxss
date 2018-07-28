@@ -1,1 +1,8 @@
 /* pages/phonelogin/phonelogin.wxss */
+.loginbanner image{
+  margin-left: 1.1rem;
+  width: 89%;
+  height: 8.6rem;
+  margin-right: 1.1rem;
+}
+

@@ -1,0 +1,23 @@
+<!--pages/phonelogin/phonelogin.wxml-->
+<view class='loginbanner'>
+  <image class='loginbanner' src='/images/loginbanner.png'></image>
+</view>
+
+<view class='input'>
+  <input class='input'>
+    <image class='littleimage' src='/images/Phone.png'></image>
+  </input>
+</view>
+
+<view class='input'>
+  <input class='inputs'>
+    <image class='littleimage' src='/images/Phone.png'></image>
+  </input>
+</view>
+
+<view class='input'>
+  <input class='input'>
+    <image class='littleimage' src='/images/Phone.png'></image>
+  </input>
+  <image class='numberimage' src='/images/Phone.png'></image>
+</view>

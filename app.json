@@ -3,11 +3,11 @@
 
     "pages/index/index",
     "pages/logs/logs",
+    "pages/phonelogin/phonelogin",
     "pages/jianli/jianli",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/interested/interested",
-    "pages/phonelogin/phonelogin",
     "pages/myadvantage/myadvantage"
   ],
   "window":{
