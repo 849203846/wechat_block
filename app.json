@@ -1,9 +1,13 @@
 {
   "pages":[
+<<<<<<< HEAD
 
+=======
+    "pages/phonelogin/phonelogin",
+    
+>>>>>>> 959d592a2928db4fe89be9526ea25794bad3632b
     "pages/index/index",
     "pages/logs/logs",
-    "pages/phonelogin/phonelogin",
     "pages/jianli/jianli",
        "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
