@@ -20,6 +20,12 @@
 </view>
 
 
+<view class='bodyer'>
+    <view class='title'>
+      <text></text>
+      <text>职位详情</text>
+  </view>
+</view>
 
 
 

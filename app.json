@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/positionItel/positionItel",
+"pages/positionItel/positionItel",
     "pages/index/index",
     "pages/logs/logs",
     "pages/jianli/jianli",
+       
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/interested/interested",
