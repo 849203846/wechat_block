@@ -1,18 +1,14 @@
 {
   "pages":[
-<<<<<<< HEAD
-
-=======
-    "pages/phonelogin/phonelogin",
-    
->>>>>>> 959d592a2928db4fe89be9526ea25794bad3632b
+  "pages/interested/interested",
     "pages/index/index",
+      "pages/phonelogin/phonelogin",
     "pages/logs/logs",
     "pages/jianli/jianli",
        "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
-    "pages/interested/interested",
+   
     "pages/myadvantage/myadvantage"
   ],
   "window":{
