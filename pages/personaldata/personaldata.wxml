@@ -1,2 +1,15 @@
-<!--pages/personaldata/personaldata.wxml-->
-<text>pages/personaldata/personaldata.wxml</text>
+<view class='informationItem'>
+  <image src='/images/my.png'></image>
+  <text>姓名</text>
+  <text>王林</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
+
+
+<view class='informationItem'>
+  <image src='/images/weixin.png'></image>
+  <text>微信号</text>
+  <text>6161616</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
+

@@ -1,16 +1,15 @@
 {
   "pages":[
-<<<<<<< HEAD
-
-=======
-    "pages/phonelogin/phonelogin",
-    
->>>>>>> 959d592a2928db4fe89be9526ea25794bad3632b
+ 
     "pages/index/index",
     "pages/logs/logs",
+      "pages/setCity/setCity",
+      "pages/addintention/addintention",
+    "pages/phonelogin/phonelogin",
     "pages/jianli/jianli",
+        "pages/ExpectedPosition/ExpectedPosition",
        "pages/positionItel/positionItel",
-    "pages/personaldata/personaldata",
+  "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/interested/interested",
     "pages/myadvantage/myadvantage"

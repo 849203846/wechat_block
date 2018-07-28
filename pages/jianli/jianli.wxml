@@ -44,7 +44,7 @@
   </view>
 
 
-  <view class='myintentionadd'>  
+  <view class='myintentionadd' bindtap='addintention'>  
     <image src='/images/+.png'></image>
     <text>添加求职期望</text>
   </view>

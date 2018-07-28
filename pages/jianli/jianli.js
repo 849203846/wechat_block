@@ -100,5 +100,10 @@ Page({
     wx.navigateTo({
       url: '../myadvantage/myadvantage',
     })
+  },
+  addintention:function(){
+    wx.navigateTo({
+      url: '../addintention/addintention',
+    })
   }
 })
