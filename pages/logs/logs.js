@@ -101,5 +101,13 @@ Page({
   wechatlogin:function(){
     //获取用户手机号
 
+  },
+  showModel:function(){
+    wx.showModal({
+      title: '温馨提示',
+      content: '使用布洛克直聘企业版小程序，发布职位，招聘牛人',
+      showCancel: false,
+      confirmText: '知道啦',
+    })
   }
 })

@@ -1,9 +1,10 @@
 {
   "pages":[
-  "pages/interested/interested",
+  "pages/logs/logs",
     "pages/index/index",
-      "pages/phonelogin/phonelogin",
-    "pages/logs/logs",
+    "pages/phonelogin/phonelogin",
+   
+    "pages/interested/interested",
     "pages/jianli/jianli",
        "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
