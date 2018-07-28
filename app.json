@@ -1,11 +1,11 @@
 {
   "pages":[
-"pages/positionItel/positionItel",
+    "pages/phonelogin/phonelogin",
+    
     "pages/index/index",
     "pages/logs/logs",
-    "pages/phonelogin/phonelogin",
     "pages/jianli/jianli",
-       
+       "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/interested/interested",
