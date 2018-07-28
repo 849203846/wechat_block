@@ -1,6 +1,6 @@
 {
   "pages":[
-
+    "pages/positionItel/positionItel",
     "pages/index/index",
     "pages/logs/logs",
     "pages/jianli/jianli",

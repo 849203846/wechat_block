@@ -53,5 +53,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  gotopositionItel:function(){
+    wx.navigateTo({
+      url: '../positionItel/positionItel',
+    })
   }
 })

@@ -14,7 +14,7 @@
 </view>
 
 
-<view class='positionItel'>
+<view class='positionItel' bindtap='gotopositionItel'>
   <text class='Title'>WEB高级前端开发工程师</text>
   <text class='money'>1-2K</text>
   <view class='body'>北京 | 5年 | 本科</view>
