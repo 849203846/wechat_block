@@ -1,17 +1,17 @@
 {
   "pages":[
- 
     "pages/index/index",
     "pages/logs/logs",
       "pages/setCity/setCity",
       "pages/addintention/addintention",
     "pages/phonelogin/phonelogin",
+    "pages/interested/interested",
     "pages/jianli/jianli",
         "pages/ExpectedPosition/ExpectedPosition",
        "pages/positionItel/positionItel",
   "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
-    "pages/interested/interested",
+   
     "pages/myadvantage/myadvantage"
   ],
   "window":{

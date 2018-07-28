@@ -1,2 +1,7 @@
-<!--pages/interested/interested.wxml-->
-<text>pages/interested/interested.wxml</text>
+<view class='InterestedItem'>
+  <text>web前端</text>
+  <text>北京|3-5年|不限</text>
+  <text>10k-15k</text>
+  <!-- <image src='/images/xin.png'></image> -->
+  <text>布洛克财经</text>
+</view>
