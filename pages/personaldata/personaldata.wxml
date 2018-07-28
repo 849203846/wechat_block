@@ -5,6 +5,48 @@
   <image src='/images/sanjiao.png'></image>
 </view>
 
+ <picker 
+  class='informationItem'
+    mode="selector" 
+    bindchange='bindPickerChange'
+    value="{{multiIndex}}" 
+    range="{{selectorArray}}"
+  >
+   <image src='/images/weixin.png'></image>
+  <text>性别</text>
+  <text>{{selectorArray[Sex]}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+
+ <picker 
+  class='informationItem'
+    mode="multiSelector" 
+    bindchange='bindMultiPickerChanges'
+    value="{{DateOfNirths}}" 
+    range="{{multiArrays}}"
+  >
+   <image src='/images/weixin.png'></image>
+  <text>出身年月</text>
+  <text>{{multiArrays[0][DateOfNirths[0]]}}年{{multiArrays[1][DateOfNirths[1]]}}月</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+ <picker 
+  class='informationItem'
+    mode="multiSelector" 
+    bindchange='bindMultiPickerChange'
+    value="{{DateOfNirth}}" 
+    range="{{multiArray}}"
+  >
+   <image src='/images/weixin.png'></image>
+  <text>参加工作时间</text>
+  <text>{{multiArray[0][DateOfNirth[0]]}}年{{multiArray[1][DateOfNirth[1]]}}月</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+
+
 
 <view class='informationItem'>
   <image src='/images/weixin.png'></image>
