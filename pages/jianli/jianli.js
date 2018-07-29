@@ -1,5 +1,5 @@
-// pages/jianli/jianli.js
-var app=getApp()
+var utils = require('../..//utils/util.js')
+var app = getApp()
 Page({
 
   /**
@@ -28,62 +28,20 @@ Page({
     }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   wantedstatus:function(){
-    var that=this
     wx.showActionSheet({
       itemList: ['离职-随时到岗', '在职-暂不考虑', '在职-考虑机会','在职-月内到岗'],
-      success: function (res) {
-        console.log(res.tapIndex)
-        that.setData({
+      success:  (res) => {
+    
+        this.setData({
           wantedstatus:res.tapIndex
+        })
+        var data={
+          work_status: res.tapIndex
+        }
+        utils.sendRrquest('saveworkstatus', 1, data)
+        .then((res)=>{
+          console.log(res)
         })
       },
       fail: function (res) {

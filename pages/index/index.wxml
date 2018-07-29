@@ -12,7 +12,7 @@
     </block>
   </swiper>
 </view>
-
+ <button open-type="getUserInfo">aaaaaaaaaaa</button> 
 
 <view class='positionItel' bindtap='gotopositionItel'>
   <text class='Title'>WEB高级前端开发工程师</text>

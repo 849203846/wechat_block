@@ -1,7 +1,7 @@
-<view class='informationItem'>
+<view class='informationItem' bindtap='opensetname'>
   <image src='/images/my.png'></image>
   <text>姓名</text>
-  <text>王林</text>
+  <text>{{realname}}</text>
   <image src='/images/sanjiao.png'></image>
 </view>
 
@@ -19,29 +19,18 @@
   </picker>
 
 
- <picker 
-  class='informationItem'
-    mode="multiSelector" 
-    bindchange='bindMultiPickerChanges'
-    value="{{DateOfNirths}}" 
-    range="{{multiArrays}}"
-  >
+     <picker  class='informationItem' mode="date" value="{{brith_at}}" start="2015-09-01" end="2017-09-01" bindchange="bindbrith_atChange">
    <image src='/images/weixin.png'></image>
   <text>出身年月</text>
-  <text>{{multiArrays[0][DateOfNirths[0]]}}年{{multiArrays[1][DateOfNirths[1]]}}月</text>
+  <text>{{brith_at}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
 
- <picker 
-  class='informationItem'
-    mode="multiSelector" 
-    bindchange='bindMultiPickerChange'
-    value="{{DateOfNirth}}" 
-    range="{{multiArray}}"
-  >
+
+   <picker  class='informationItem' mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
    <image src='/images/weixin.png'></image>
   <text>参加工作时间</text>
-  <text>{{multiArray[0][DateOfNirth[0]]}}年{{multiArray[1][DateOfNirth[1]]}}月</text>
+  <text>{{date}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
 
@@ -55,3 +44,17 @@
   <image src='/images/sanjiao.png'></image>
 </view>
 
+<button bindtap='set'>保存</button>
+
+
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>姓名</text>
+  <text bindtap='cloce'>关闭</text>
+  </view>
+  <input placeholder='输入内容'  bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>

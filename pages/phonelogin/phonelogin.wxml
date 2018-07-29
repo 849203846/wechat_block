@@ -5,7 +5,7 @@
 
 <view class='input'>
   <input class='input'>
-    <!-- <image class='littleimage' src='/images/Phone.png'></image> -->
+    <image class='littleimage' src='/images/Phone.png'></image>
   </input>
 </view>
 

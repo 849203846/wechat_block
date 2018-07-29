@@ -1,6 +1,6 @@
 {
   "pages":[
-      "pages/personaldata/personaldata",
+
     "pages/index/index",
     "pages/logs/logs",
       "pages/setCity/setCity",
@@ -10,15 +10,15 @@
     "pages/jianli/jianli",
         "pages/ExpectedPosition/ExpectedPosition",
        "pages/positionItel/positionItel",
-
+    "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
-   
+  
     "pages/myadvantage/myadvantage"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "布洛克招聘",
+    "navigationBarTitleText": "布洛克直聘",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
