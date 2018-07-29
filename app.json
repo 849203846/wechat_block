@@ -3,6 +3,7 @@
 
     "pages/index/index",
     "pages/logs/logs",
+    "pages/myintentionadd/myintentionadd",
       "pages/setCity/setCity",
       "pages/addintention/addintention",
     "pages/phonelogin/phonelogin",
@@ -13,7 +14,10 @@
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
   
-    "pages/myadvantage/myadvantage"
+    "pages/myadvantage/myadvantage",
+
+    "pages/componyName/componyName",
+    "pages/positionType/positionType"
   ],
   "window":{
     "backgroundTextStyle":"light",

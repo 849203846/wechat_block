@@ -74,10 +74,10 @@
   </view>
 
 
-   <view class='myintentionadd'>  
+   <navigator url='../myintentionadd/myintentionadd' class='myintentionadd'>  
     <image src='/images/+.png'></image>
     <text>添加工作经历</text>
-  </view>
+  </navigator>
 </view>
 
 
