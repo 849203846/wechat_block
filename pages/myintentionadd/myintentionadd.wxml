@@ -1,11 +1,11 @@
 <!-- <view class="Tips">您的多个意向都会被Boss看到,请认真填写</view> -->
 
-<navigator url='../componyName/componyName' class='addintention' >
-<image src='/images/bao.png'></image>
-<text>公司名称</text>
-<text>前端</text>
-<image src='/images/sanjiao.png'></image>
-</navigator>
+<view class='addintention' bindtap='opensetname'>
+  <image src='/images/my.png'></image>
+  <text>公司名称</text>
+  <text>{{real_name}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
 
 <view class='addintention'>
 <image src='/images/bao.png'></image>
@@ -77,3 +77,14 @@
   </picker> 
 
 <view class='submit'>保存</view>
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>公司名称</text>
+  <text bindtap='close'>关闭</text>
+  </view>
+  <input placeholder='输入内容'  bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>

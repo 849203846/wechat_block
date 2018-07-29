@@ -54,3 +54,14 @@
   </picker> 
 
 <view class='submit'>保存</view>
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>公司名称</text>
+  <text bindtap='cloce'>关闭</text>
+  </view>
+  <input placeholder='　输入内容'  bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>
