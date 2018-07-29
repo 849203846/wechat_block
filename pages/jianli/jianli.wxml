@@ -72,35 +72,30 @@
     </view>
 
   </view>
-
-
    <navigator url='../myintentionadd/myintentionadd' class='myintentionadd'>  
     <image src='/images/+.png'></image>
     <text>添加工作经历</text>
   </navigator>
 </view>
 
-
-
 <view class='ProjectExperience'>
  <view class='title'>
       <text></text>
       <text>项目经验</text>
   </view>
-  <view class='myintentionadd'>  
+  <navigator url='../workExperience/workExperience' class='myintentionadd'>  
     <image src='/images/+.png'></image>
-    <text>添加项目经验</text>
-  </view>
+    <text>添加工作经历</text>
+  </navigator>
 </view>
-
 
 <view class='EducationalExperience'>
  <view class='title'>
       <text></text>
       <text>教育经历</text>
   </view>
-  <view class='myintentionadd'>  
+  <navigator url='../eduExperience/eduExperience' class='myintentionadd'>  
     <image src='/images/+.png'></image>
     <text>添加教育经历</text>
-  </view>
+  </navigator>
 </view>

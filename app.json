@@ -17,7 +17,9 @@
     "pages/myadvantage/myadvantage",
 
     "pages/componyName/componyName",
-    "pages/positionType/positionType"
+    "pages/positionType/positionType",
+    "pages/workExperience/workExperience",
+    "pages/eduExperience/eduExperience"
   ],
   "window":{
     "backgroundTextStyle":"light",

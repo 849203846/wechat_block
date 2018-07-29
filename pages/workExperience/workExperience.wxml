@@ -1,63 +1,40 @@
-<!-- <view class="Tips">您的多个意向都会被Boss看到,请认真填写</view> -->
+<!--pages/workExperience/workExperience.wxml-->
+<!-- <text>pages/workExperience/workExperience.wxml</text> -->
 
 <navigator url='../componyName/componyName' class='addintention' >
 <image src='/images/bao.png'></image>
-<text>公司名称</text>
+<text>项目名称</text>
 <text>前端</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<view class='addintention'>
+<navigator url='../componyName/componyName' class='addintention' >
 <image src='/images/bao.png'></image>
-<text>公司行业</text>
-<text>不限</text>
+<text>项目链接</text>
+<text>选填</text>
 <image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
 <navigator url='../positionType/positionType' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>职位类型</text>
+<text>项目角色</text>
 <text>北京</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-
-  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-
+<navigator url='../positionType/positionType' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>职位名称</text>
-  <text  class="picker" >{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</text>
-  <image src='/images/sanjiao.png'></image>
-  </picker>
-
-<view class='addintention'>
-<image src='/images/bao.png'></image>
-<text>技能标签</text>
-<text>不限</text>
+<text>项目描述</text>
+<text>北京</text>
 <image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
-<view class='addintention'>
+<navigator url='../positionType/positionType' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>所属部门</text>
-<text>不限</text>
+<text>项目业绩</text>
+<text>北京</text>
 <image src='/images/sanjiao.png'></image>
-</view>
-
-<view class='addintention'>
-<image src='/images/bao.png'></image>
-<text>工作内容</text>
-<text>不限</text>
-<image src='/images/sanjiao.png'></image>
-</view>
-
-
-<view class='addintention'>
-<image src='/images/bao.png'></image>
-<text>工作业绩</text>
-<text>不限</text>
-<image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayBegin}}">
 
