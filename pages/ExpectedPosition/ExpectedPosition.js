@@ -1,66 +1,84 @@
-// pages/ExpectedPosition/ExpectedPosition.js
+var utils = require('../..//utils/util.js')
+var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    jobsOne:[],
+    rightbox:'none',
+    rightboxtwo:'none'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    var data={
+      level:0,
+      // level: 1,
+      id:''
+    }
+    utils.sendRrquest('getjobs', 1, data)
+    .then((res)=>{
+        console.log(res.data.data)
+        this.setData({
+          jobsOne:res.data.data
+        })
+    })
   },
+  click:function(e){
+    console.log(e)
+    var id = e.target.dataset.id
+    var data = {
+      level: 1,
+      fid: id
+    }
+    utils.sendRrquest('getjobs', 1, data)
+      .then((res) => {
+        console.log(res)
+        if(res.data.status==='200'){
+          console.log(res.data.data)
+          this.setData({
+            rightbox:'block',
+            jobstwo: res.data.data
+          })
+        }else{
+          wx.showModal({
+            title: '温馨提示',
+            content: '获取失败',
+          })
+        }
+       
+      })
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
   },
+  getrightbox:function(e){
+    var id=e.target.dataset.id
+    console.log(id)
+    var data={
+      level: 2, fid: id
+    }
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+    utils.sendRrquest('getjobs', 1, data)
+      .then((res) => {
+        console.log(res)
+        if (res.data.status === '200') {
+          console.log(res.data.data)
+          this.setData({
+            rightboxtwo: 'block',
+            jobsthree: res.data.data
+          })
+        } else {
+          wx.showModal({
+            title: '温馨提示',
+            content: '获取失败',
+          })
+        }
+
+      })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  back:function(e){
+    var fid = e.target.dataset.id
+    console.log(fid)
+    app.globalData.fid=fid
+    app.globalData.fidname = e.target.dataset.fidname
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

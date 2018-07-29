@@ -9,17 +9,17 @@
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<view class='addintention'>
+<navigator class='addintention' url='../industry/industry'>
 <image src='/images/bao.png'></image>
 <text>期望行业</text>
 <text>不限</text>
 <image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
 <navigator url='../setCity/setCity' class='addintention'>
 <image src='/images/bao.png'></image>
 <text>工作城市</text>
-<text>北京</text>
+<text>{{area_name}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
@@ -35,4 +35,4 @@
 
 
 
-<view class='submit'>保存</view>
+<view class='submit' bindtap='submit'>保存</view>

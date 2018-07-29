@@ -36,6 +36,7 @@ App({
   },
   globalData: {
     url:'https://recruit.zhangchaoqun.cn/api/',
-    userInfo: null
+    userInfo: null,
+    trade:''
   }
 })

@@ -25,3 +25,8 @@ view{
   margin: 0 auto;
   border-bottom: 1px solid #ccc;
 }
+.itemtitle{
+   height: 1.2rem;
+   color: #ccc;
+   border:none;
+}

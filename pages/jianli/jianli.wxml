@@ -25,7 +25,7 @@
   <text>我的优势</text>
   <text bindtap='gomyadvantage'>编辑</text>
   </view>
-  <view class='myadvantagetext'>{{myadvantagetext}}</view>
+  <view class='myadvantagetext'>{{introduce}}</view>
 </view>
 
 
@@ -35,12 +35,12 @@
       <text></text>
       <text>求职意向</text>
   </view>
-  <view class='myintentionbody'>
+  <view class='myintentionbody' wx:for="{{willlist}}" bindtap='addintention' data-id='{{item.id}}'>
     <view>
-      <text>[北京]web前端</text>
-      <text>1k-2k</text>
+      <text>[{{item.area_name}}]{{item.job_name}}</text>
+      <text>{{item.pay_start}}k-{{item.pay_end}}k</text>
     </view>
-    <text>计算机软件</text>
+    <text>{{item.job_name}}</text>
   </view>
 
 

@@ -9,7 +9,7 @@ Page({
     userAg0:'点击头像可登录/注册',
     avatarUrl: "/images/my_light.png",
     loginstatus:'none',//登录态
-    loginClose:'block'
+    loginClose:'none'
   },
 
   /**
