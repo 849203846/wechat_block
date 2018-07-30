@@ -36,7 +36,7 @@
       <text>求职意向</text>
   </view>
   <view class='myintentionbody' wx:for="{{willlist}}" bindtap='addintention' data-id='{{item.id}}'>
-    <view>
+    <view data-id='{{item.id}}' >
       <text>[{{item.area_name}}]{{item.job_name}}</text>
       <text>{{item.pay_start}}k-{{item.pay_end}}k</text>
     </view>

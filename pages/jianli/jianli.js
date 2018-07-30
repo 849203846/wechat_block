@@ -78,9 +78,35 @@ Page({
       url: '../myadvantage/myadvantage',
     })
   },
-  addintention:function(){
+  addintention:function(e){
+    var id = e.target.dataset.id
+    if(id){
+      var willlist=this.data.willlist
+      for (var i = 0; i < willlist.length;i++){
+        debugger
+        if(id==willlist[i].id){
+          app.globalData.id = willlist[i].id
+          app.globalData.fidname = willlist[i].job_name
+          app.globalData.fid = willlist[i].fid
+          app.globalData.trade_name_one = willlist[i].trade_name_one
+          app.globalData.trade_name_two = willlist[i].trade_name_two
+          app.globalData.trade_name_three = willlist[i].trade_name_three
+          app.globalData.pay_start = willlist[i].pay_start
+          app.globalData.pay_end = willlist[i].pay_end
+          app.globalData.trade_id_one = willlist[i].trade_id_one
+          app.globalData.trade_id_two = willlist[i].trade_id_two
+          app.globalData.trade_id_three = willlist[i].trade_id_three
+          break
+        }
+        
+      }
+      
+    }else{
+
+    }
     wx.navigateTo({
       url: '../addintention/addintention',
     })
+    
   }
 })

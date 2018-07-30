@@ -19,6 +19,7 @@ Page({
     console.log(app.globalData.area_name)
     if (app.globalData.area_name){
       this.setData({
+        fidname: app.globalData.fidname,
         area_name:app.globalData.area_name
       })
     }
@@ -42,6 +43,15 @@ Page({
       pay_end: this.data.multiArray[1][this.data.multiIndex[1]].split('k')[0],
     }
     console.log(data)
+    if(true){
+      
+      utils.sendRrquest('savewill', 1, data)
+      .then((res)=>{
+          if(res.data.status==='200'){
+            
+          }
+      })
+    }
     utils.sendRrquest('addwill', 1, data)
     .then((res)=>{
       console.log(res)

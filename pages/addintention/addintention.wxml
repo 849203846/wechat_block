@@ -3,7 +3,7 @@
 <navigator url='../ExpectedPosition/ExpectedPosition' class='addintention' >
 <image src='/images/bao.png'></image>
 <text>期望职位</text>
-<text>前端</text>
+<text>{{fidname}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
@@ -29,8 +29,6 @@
   <text  class="picker" >{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
-
-
 
 
 <view class='submit' bindtap='submit'>保存</view>
