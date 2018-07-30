@@ -80,5 +80,8 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+  scroll:function(e){
+    console.log(e)
   }
 })

@@ -12,14 +12,17 @@
 
 <view class='rightone' style='display:{{rightbox}}'>
   <view style='height: 2rem;'></view>
-  <view class='rightones'>
+  <scroll-view  class='rightones' scroll-x   bindscroll="scroll" data-flag="1" >
     <view  wx:for="{{jobstwo}}" bindtap='getrightbox'  wx:for-item="item" data-id='{{item.id}}'>
     {{item.job}}
     </view>
-  </view>
-  <view class='righttwp' style='display:{{rightboxtwo}}'>
+        <view  wx:for="{{jobstwo}}" bindtap='getrightbox'  wx:for-item="item" data-id='{{item.id}}'>
+    {{item.job}}
+    </view>
+  </scroll-view>
+  <!-- <scroll-view class='righttwp' scroll-x style='display:{{rightboxtwo}}'  bindscroll="scroll" data-flag="2">
    <view  wx:for="{{jobsthree}}" bindtap='back' data-fidname='{{item.job}}' wx:for-item="item" data-id='{{item.id}}'>
     {{item.job}}
     </view>
-  </view>
+  </scroll-view> -->
 </view>
