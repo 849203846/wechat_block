@@ -42,5 +42,37 @@ opensetname: function() {
     this.close()
   },
 
+  opensetname: function () {
+    this.setData({
+      tankuangstatus: 'block',
+      tankuangname: '公司名称',
+      name: this.data.realname
+    })
+  },
+  posName: function () {
+    this.setData({
+      tankuangstatus: 'blcok',
+      tankuangname: '职位名称',
+      name: this.data.posName
+    })
+  },
+  setname: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  setnames: function () {
+    if (this.data.tankuangname === '姓名') {
+      this.setData({
+        realname: this.data.name
+      })
+    } else {
+      this.setData({
+        wechartel: this.data.name
+      })
+    }
+    this.close()
+  },
 
 })

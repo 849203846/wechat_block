@@ -85,7 +85,7 @@
   </view>
   <navigator url='../workExperience/workExperience' class='myintentionadd'>  
     <image src='/images/+.png'></image>
-    <text>添加工作经历</text>
+    <text>添加项目经验</text>
   </navigator>
 </view>
 

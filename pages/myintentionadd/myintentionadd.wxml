@@ -7,28 +7,35 @@
   <image src='/images/sanjiao.png'></image>
 </view>
 
-<view class='addintention'>
-<image src='/images/bao.png'></image>
-<text>公司行业</text>
-<text>不限</text>
-<image src='/images/sanjiao.png'></image>
-</view>
-
 <navigator url='../positionType/positionType' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>职位类型</text>
+<text>公司行业</text>
 <text>北京</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
+<navigator url='../ExpectedPosition/ExpectedPosition' class='addintention' >
+<image src='/images/bao.png'></image>
+<text>职位类型</text>
+<text>{{fidname}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
 
-  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+
+  <!-- <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
 
 <image src='/images/bao.png'></image>
 <text>职位名称</text>
   <text  class="picker" >{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
-  </picker>
+  </picker> -->
+
+<view class='addintention' bindtap='posName'>
+  <image src='/images/my.png'></image>
+  <text>职位名称</text>
+  <text>{{pos_name}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
 
 <view class='addintention'>
 <image src='/images/bao.png'></image>
@@ -44,20 +51,19 @@
 <image src='/images/sanjiao.png'></image>
 </view>
 
-<view class='addintention'>
+<navigator url='../posContent/posContent' class='addintention'>
 <image src='/images/bao.png'></image>
 <text>工作内容</text>
-<text>不限</text>
+<text>程序猿</text>
 <image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
-
-<view class='addintention'>
+<navigator url='../posAchieve/posAchieve' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>工作业绩</text>
-<text>不限</text>
+<text>工作内容</text>
+<text>程序猿</text>
 <image src='/images/sanjiao.png'></image>
-</view>
+</navigator>
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayBegin}}">
 
@@ -76,15 +82,13 @@
 
   </picker> 
 
-<view class='submit'>保存</view>
-
 <view class='tan' style='display:{{tankuangstatus}}'>
   <view class='tankuang'> 
   <view>
-  <text>公司名称</text>
+  <text>{{tankuangname}}</text>
   <text bindtap='close'>关闭</text>
   </view>
-  <input placeholder='输入内容'  bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <input placeholder='输入内容'  bindinput='setname' value='{{name}}' placeholder-style='text-align: center; color:#cccccc;'></input>
   <view bindtap='setnames'>保存</view>
   </view>
 </view>

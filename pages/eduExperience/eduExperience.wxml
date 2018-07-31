@@ -28,10 +28,10 @@
   <image src='/images/sanjiao.png'></image>
 </picker>
 
-<navigator url='../positionType/positionType' class='addintention'>
+<navigator url='../studyExperience/studyExperience' class='addintention'>
 <image src='/images/bao.png'></image>
-<text>项目业绩</text>
-<text>北京</text>
+<text>在校经历</text>
+<text>选填</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 

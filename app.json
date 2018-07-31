@@ -21,7 +21,12 @@
     "pages/componyName/componyName",
     "pages/positionType/positionType",
     "pages/workExperience/workExperience",
-    "pages/eduExperience/eduExperience"
+    "pages/eduExperience/eduExperience",
+    "pages/posContent/posContent",
+    "pages/posAchieve/posAchieve",
+    "pages/projAchieve/projAchieve",
+    "pages/projDescription/projDescription",
+    "pages/studyExperience/studyExperience"
   ],
   "window":{
     "backgroundTextStyle":"light",

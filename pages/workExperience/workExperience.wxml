@@ -22,14 +22,14 @@
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<navigator url='../positionType/positionType' class='addintention'>
+<navigator url='../projDescription/projDescription' class='addintention'>
 <image src='/images/bao.png'></image>
 <text>项目描述</text>
 <text>北京</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<navigator url='../positionType/positionType' class='addintention'>
+<navigator url='../projAchieve/projAchieve' class='addintention'>
 <image src='/images/bao.png'></image>
 <text>项目业绩</text>
 <text>北京</text>
