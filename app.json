@@ -15,13 +15,14 @@
        "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
-  
     "pages/myadvantage/myadvantage",
-
     "pages/componyName/componyName",
     "pages/positionType/positionType",
+    "pages/getskill/getskill",
     "pages/workExperience/workExperience",
-    "pages/eduExperience/eduExperience"
+    "pages/eduExperience/eduExperience",
+    "pages/content/content",
+    "pages/gongsihangye/gongsihangye"
   ],
   "window":{
     "backgroundTextStyle":"light",

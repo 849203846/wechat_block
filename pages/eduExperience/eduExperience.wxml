@@ -1,38 +1,52 @@
 <!--pages/eduExperience/eduExperience.wxml-->
 <!-- <text>pages/eduExperience/eduExperience.wxml</text> -->
-<navigator url='../componyName/componyName' class='addintention' >
+<navigator  class='addintention' bindtap='opentankuangstatus'>
 <image src='/images/bao.png'></image>
 <text>学校名称</text>
-<text>北京大学</text>
+<text>{{school}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
- <picker mode="multiSelector" class='addintention' value="{{multiIndex}}" range="{{multiArrayEdu}}">
+ <picker mode="selector" class='addintention' bindchange='bindPickerChange' value="{{degree}}" range="{{multiArrayEdu}}">
   <image src='/images/bao.png'></image>
   <text>学历水平</text>
-  <text  class="picker" >{{multiArrayEdu[0][multiIndex[0]]}}</text>
+  <text  class="picker" >{{multiArrayEdu[degree]}}</text>
   <image src='/images/sanjiao.png'></image>
 </picker> 
 
-<navigator url='../componyName/componyName' class='addintention' >
+<navigator  class='addintention' bindtap="addintention">
 <image src='/images/bao.png'></image>
 <text>专业名称</text>
-<text>计算机科学与技术</text>
+<text>{{major_name}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<picker mode="multiSelector" class='addintention' value="{{multiIndex}}" range="{{multiArrayYear}}">
+<picker mode="multiSelector" class='addintention' bindchange='setstart_at' value="{{multiIndex}}" range="{{multiArrayYear}}">
   <image src='/images/bao.png'></image>
   <text>时间段</text>
-  <text  class="picker" >{{multiArrayOver[0][multiIndex[0]]}}-{{multiArrayOver[1][multiIndex[1]]}}</text>
+  <text  class="picker" >{{multiArrayYear[0][start_at[0]]}}-{{multiArrayYear[1][start_at[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
 </picker>
 
-<navigator url='../positionType/positionType' class='addintention'>
+<navigator  class='addintention' url='../content/content?type=exper&content={{exper}}' >
 <image src='/images/bao.png'></image>
 <text>项目业绩</text>
-<text>北京</text>
+<text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<view class='submit'>保存</view>
+<view class='submit' bindtap='addsubmit'>保存</view>
+
+<view class='submit' wx:if="{{id&&id!=''}}" bindtap='delsubmit'>删除</view>
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='cloce'>关闭</text>
+  </view>
+  <input placeholder='输入内容' value='{{tankuangcontent}}' bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='baocun'>保存</view>
+  </view>
+</view>
+

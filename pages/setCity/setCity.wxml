@@ -1,10 +1,10 @@
-<view class='oneinput'>
+<!-- <view class='oneinput'>
 <input type="text" placeholder='请输入关键字' placeholder-style='  text-align: center;font-size:.8rem;'></input>
-</view>
+</view> -->
 
 
 <block wx:for="{{area}}"  wx:for-index="index" wx:for-item="item">
-<view>{{index}}</view>
+<view class='tabtitle'>{{index}}</view>
 <block wx:for="{{item}}" wx:for-item="areaitem">
 <view data-id="{{areaitem.id}}" bindtap='back' data-area_name="{{areaitem.area_name}}">
 {{areaitem.area_name}}

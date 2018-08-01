@@ -1,66 +1,37 @@
-// pages/positionType/positionType.js
+var utils = require('../..//utils/util.js')
+var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    trades: [],
+    id:'undefined'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function (op) {
+    // debugger
+    // if (op.saveid!='') {
+    //   this.setData({
+    //     saveid: op.saveid
+    //   })
+    // }
+    utils.sendRrquest('gettrades', 1, {})
+      .then((res) => {
+        console.log(res.data.data)
+        this.setData({
+          trades: res.data.data
+        })
+      })
   },
+  back: function (e) {
+    var trade = e.target.dataset.trade,
+      trade_id = e.target.dataset.id
+    // if (this.data.id == '') {
+      app.globalData.trade_id = trade_id
+      app.globalData.trade = trade
+      wx.navigateBack({
+        delta: 1
+      })
+    // }else{
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    // }
   
   }
 })

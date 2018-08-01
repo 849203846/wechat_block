@@ -22,6 +22,7 @@ Page({
       success: function(res) {
         console.log(res.data)
         that.setData({
+          userInfo:res.data,
           brith_at: res.data.birthday,
           workday: res.data.work_at,
           gender: res.data.gender,
@@ -108,7 +109,17 @@ Page({
     }
     utils.sendRrquest('saveuser', 1, data)
     .then((res)=>{
+      var userInfo = this.data.userInfo
+      userInfo.realname = this.data.realname
+      userInfo.work_at = this.data.workday
+      userInfo.birthday = this.data.brith_at
+      userInfo.gender = this.data.gender
+      userInfo.wechat = this.data.wechartel
       if (res.data.status==='200'){
+        wx.setStorage({
+          key: ' userInfo',
+          data: userInfo,
+        })
         wx.showToast({
           title: '成功',
           icon: 'success',

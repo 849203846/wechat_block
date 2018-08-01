@@ -37,10 +37,10 @@
   </view>
   <view class='myintentionbody' wx:for="{{willlist}}" bindtap='addintention' data-id='{{item.id}}'>
     <view data-id='{{item.id}}' >
-      <text>[{{item.area_name}}]{{item.job_name}}</text>
-      <text>{{item.pay_start}}k-{{item.pay_end}}k</text>
+      <text data-id='{{item.id}}' >[{{item.area_name}}]{{item.job_name}}</text>
+      <text data-id='{{item.id}}'>{{item.pay_start}}k-{{item.pay_end}}k</text>
     </view>
-    <text>{{item.job_name}}</text>
+    <text data-id='{{item.id}}' >{{item.job_name}}</text>
   </view>
 
 
@@ -56,22 +56,23 @@
     <text></text>
     <text>工作经历</text>
   </view>
+    <block wx:for="{{getworks}}">
   <view class='workExperiencebody'>
     <view class='companyname'>
-    <text>北京松鼠电电科技文化有限公司</text>
-    <navigator>编辑</navigator>
+    <text>{{item.company}}</text>
+    <navigator url='../myintentionadd/myintentionadd?id={{item.id}}'>编辑</navigator>
     </view>
 
-    <view class='companypost'>
-    <text>技术部前端开发</text>
-    <text>2018.6.58-2015.8.56</text>
+      <view  class='companypost'>
+      <text>{{item.division}}</text>
+      <text>2018.6.58-2015.8.56</text>
+      </view>
+      <view class='companycontent'>
+      内容：{{item.work_content}}
+      </view>
     </view>
+    </block>  
 
-    <view class='companycontent'>
-    内容：负责小程序的开发和迭代
-    </view>
-
-  </view>
    <navigator url='../myintentionadd/myintentionadd' class='myintentionadd'>  
     <image src='/images/+.png'></image>
     <text>添加工作经历</text>
@@ -83,9 +84,31 @@
       <text></text>
       <text>项目经验</text>
   </view>
+
+    <block wx:for="{{getprojects}}">
+  <view class='workExperiencebody'>
+    <view class='companyname'>
+    <text>{{item.name}}</text>
+    <navigator url='../workExperience/workExperience?id={{item.id}}'>编辑</navigator>
+    </view>
+
+      <view  class='companypost'>
+      <text>{{item.role}}</text>
+      <text>2018.6.58-2015.8.56</text>
+      </view>
+      <view class='companycontent'>
+      内容：{{item.desc}}
+      </view>
+        <view class='companycontent'>
+      业绩：{{item.exper}}
+      </view>
+    </view>
+    </block>  
+
+
   <navigator url='../workExperience/workExperience' class='myintentionadd'>  
     <image src='/images/+.png'></image>
-    <text>添加工作经历</text>
+    <text>添加项目经验</text>
   </navigator>
 </view>
 
@@ -94,8 +117,55 @@
       <text></text>
       <text>教育经历</text>
   </view>
+    <block wx:for="{{geteducation}}">
+  <view class='workExperiencebody'>
+    <view class='companyname'>
+    <text>{{item.school}}</text>
+    <navigator url='../eduExperience/eduExperience?id={{item.id}}'>编辑</navigator>
+    </view>
+
+      <view  class='companypost'>
+      <text>{{item.major_name}}</text>
+      <text>{{item.start_at+'-'+item.end_at}}</text>
+      </view>
+    </view>
+    </block>  
   <navigator url='../eduExperience/eduExperience' class='myintentionadd'>  
     <image src='/images/+.png'></image>
     <text>添加教育经历</text>
   </navigator>
 </view>
+
+
+
+<view class='EducationalExperience'>
+ <view class='title'>
+      <text></text>
+      <text>社交帐号</text>
+  </view>
+    <block wx:for="{{getsocial}}" >
+  <view class='workExperiencebody'>
+    <view class='companyname'>
+    <text>{{item.address}}</text>
+    <navigator bindtap="setADDress" data-addressid='{{item.id}}' data-address="{{item.address}}">编辑</navigator>
+    </view>
+    </view>
+    </block>  
+  <navigator bindtap='addAddress' class='myintentionadd'>  
+    <image src='/images/+.png'></image>
+    <text>添加社交地址</text>
+  </navigator>
+</view>
+
+
+<view class='tan' style='display:{{addAddress}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='cloce'>关闭</text>
+  </view>
+  <input placeholder='输入内容' value='{{address}}' bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view> <view wx:if="{{tankuangname==='修改社交地址'}}"  bindtap='deladdAddress'>删除</view><view  bindtap='baocun'>保存</view></view>
+  </view>
+</view>
+

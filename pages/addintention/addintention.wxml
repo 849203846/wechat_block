@@ -1,20 +1,20 @@
 <view class="Tips">您的多个意向都会被Boss看到,请认真填写</view>
 
-<navigator url='../ExpectedPosition/ExpectedPosition' class='addintention' >
+<navigator url='../ExpectedPosition/ExpectedPosition?id={{id}}' class='addintention' >
 <image src='/images/bao.png'></image>
 <text>期望职位</text>
 <text>{{fidname}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<navigator class='addintention' url='../industry/industry'>
+<navigator class='addintention' url='../industry/industry?id={{id}}'>
 <image src='/images/bao.png'></image>
 <text>期望行业</text>
-<text>不限</text>
+<text>{{trade_name_one}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
-<navigator url='../setCity/setCity' class='addintention'>
+<navigator url='../setCity/setCity?id={{id}}' class='addintention'>
 <image src='/images/bao.png'></image>
 <text>工作城市</text>
 <text>{{area_name}}</text>
@@ -32,3 +32,4 @@
 
 
 <view class='submit' bindtap='submit'>保存</view>
+<view class='submit' style="display:{{id!='undefined'?'block':'none'}};margin-top:1rem" bindtap='del'>删除</view>
