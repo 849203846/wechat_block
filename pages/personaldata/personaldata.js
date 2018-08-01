@@ -50,7 +50,7 @@ Page({
       Sex: e.detail.value
     })
   },
-  cloce:function(){
+  close:function(){
     this.setData({
       tankuangstatus: 'none'
     })
@@ -85,7 +85,7 @@ Page({
         wechartel: this.data.name
       })
     }
-    this.cloce()
+    this.close()
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)

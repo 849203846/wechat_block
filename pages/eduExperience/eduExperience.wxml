@@ -1,5 +1,3 @@
-<!--pages/eduExperience/eduExperience.wxml-->
-<!-- <text>pages/eduExperience/eduExperience.wxml</text> -->
 <navigator  class='addintention' bindtap='opentankuangstatus'>
 <image src='/images/bao.png'></image>
 <text>学校名称</text>
@@ -28,10 +26,11 @@
   <image src='/images/sanjiao.png'></image>
 </picker>
 
+
 <navigator  class='addintention' url='../content/content?type=exper&content={{exper}}' >
 <image src='/images/bao.png'></image>
-<text>项目业绩</text>
-<text>点击查看</text>
+<text>在校经历</text>
+<text>选填</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 

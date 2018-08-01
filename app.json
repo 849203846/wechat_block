@@ -22,7 +22,12 @@
     "pages/workExperience/workExperience",
     "pages/eduExperience/eduExperience",
     "pages/content/content",
-    "pages/gongsihangye/gongsihangye"
+    "pages/gongsihangye/gongsihangye",
+    "pages/posContent/posContent",
+    "pages/posAchieve/posAchieve",
+    "pages/projAchieve/projAchieve",
+    "pages/projDescription/projDescription",
+    "pages/studyExperience/studyExperience"
   ],
   "window":{
     "backgroundTextStyle":"light",

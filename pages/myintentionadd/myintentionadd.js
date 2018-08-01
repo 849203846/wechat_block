@@ -188,23 +188,56 @@ opensetname: function() {
     this.close()
   },
 
-  gongsihangye:function(){
+  opensetname: function () {
+    this.setData({
+      tankuangstatus: 'block',
+      tankuangname: '公司名称',
+      name: this.data.realname
+    })
+  },
+  posName: function () {
+    this.setData({
+      tankuangstatus: 'blcok',
+      tankuangname: '职位名称',
+      name: this.data.posName
+    })
+  },
+  setname: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  setnames: function () {
+    if (this.data.tankuangname === '姓名') {
+      this.setData({
+        realname: this.data.name
+      })
+    } else {
+      this.setData({
+        wechartel: this.data.name
+      })
+    }
+    this.close()
+  },
+
+  gongsihangye: function () {
     wx.navigateTo({
       url: '../gongsihangye/gongsihangye',
     })
   },
-  gotojinengbiaoqian:function(){
-    if (this.data.job_id!=''){
+  gotojinengbiaoqian: function () {
+    if (this.data.job_id != '') {
       wx.navigateTo({
-        url: '../getskill/getskill?job_id=' + this.data.job_id+'&id='+this.data.saveid,
+        url: '../getskill/getskill?job_id=' + this.data.job_id + '&id=' + this.data.saveid,
       })
-    }else{
+    } else {
       wx.showModal({
         title: '温馨提示',
         content: '请先选择职位类型',
       })
     }
-  }  ,
+  },
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -217,16 +250,16 @@ opensetname: function() {
       multiIndexs: e.detail.value
     })
   },
-  submit:function(){
-    var data={
+  submit: function () {
+    var data = {
       company: this.data.company,//公司名称
       job_id: this.data.job_id,//职位名称
       job_name: this.data.job_name,
-      trade_id: this.data.trade_id ,
+      trade_id: this.data.trade_id,
       tag_one: this.data.tag_one,
       tag_two: this.data.tag_two,
       tag_three: this.data.tag_three,
-      division: this.data.division ,
+      division: this.data.division,
       work_content: this.data.work_content,
       work_ach: this.data.work_ach,
       start_at: this.data.multiArrayBegin[0][this.data.multiIndex[0]].split('年')[0] + "-" + this.data.multiArrayBegin[1][this.data.multiIndex[1]].split('月')[0],
@@ -234,50 +267,50 @@ opensetname: function() {
     }
     console.log(data)
     var url = 'addwork'
-    if(this.data.saveid&&this.data.saveid!=''){
-      url ='savework'
-      data.id=this.data.saveid
-    }else{
+    if (this.data.saveid && this.data.saveid != '') {
+      url = 'savework'
+      data.id = this.data.saveid
+    } else {
       url = 'addwork'
     }
     utils.sendRrquest(url, 1, data)
-    .then((res)=>{
-      if(res.data.status==='200'){
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 500
-        })
-        setTimeout(() => {
-          wx.navigateBack({
-            delta: 1
+      .then((res) => {
+        if (res.data.status === '200') {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 500
           })
-        }, 500)
-      }else{
-        wx.showModal({
-          title: '温馨提示',
-          content: '保存失败',
-        })
-      }
-      console.log(res)
-    })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 500)
+        } else {
+          wx.showModal({
+            title: '温馨提示',
+            content: '保存失败',
+          })
+        }
+        console.log(res)
+      })
   },
-  delsubmit:function(){
-    utils.sendRrquest('delwork', 1, { id: this.data.saveid}).then((res)=>{
-      if(res.data.status==='200'){
+  delsubmit: function () {
+    utils.sendRrquest('delwork', 1, { id: this.data.saveid }).then((res) => {
+      if (res.data.status === '200') {
         wx.showToast({
           title: '刪除成功',
-          icon:'success',
-          duration:500,
-          success:function(){
-            setTimeout(()=>{
+          icon: 'success',
+          duration: 500,
+          success: function () {
+            setTimeout(() => {
               wx.navigateBack({
-                delta:1
+                delta: 1
               })
-            },500)
+            }, 500)
           }
         })
-      }else{
+      } else {
         wx.showModal({
           title: '温馨提示',
           content: '删除失败，请重新打开小程序',

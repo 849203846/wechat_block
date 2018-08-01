@@ -22,11 +22,13 @@
 
 <navigator url='../content/content?type=desc&content={{desc}}'
  class='addintention'>
+
 <image src='/images/bao.png'></image>
 <text>项目描述</text>
 <text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
+
 
 <navigator url='../content/content?type=exper&content={{exper}}'
  class='addintention'>

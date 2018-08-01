@@ -22,12 +22,15 @@
 </navigator>
 
 
-  <view class='addintention' bindtap='opensetnametwo'>
 
+
+
+  <view class='addintention' bindtap='opensetnametwo'>
 <image src='/images/bao.png'></image>
 <text>职位名称</text>
   <text  class="picker" >{{job_name}}</text>
   <image src='/images/sanjiao.png'></image>
+
   </view>
 
 <view class='addintention' bindtap='gotojinengbiaoqian'>
@@ -47,7 +50,7 @@
 <navigator url='../content/content?type=content&content={{work_content}}' class='addintention' >
 <image src='/images/bao.png'></image>
 <text>工作内容</text>
-<text></text>
+<text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
@@ -56,8 +59,8 @@
 <image src='/images/bao.png'></image>
 <text>工作业绩</text>
 <text></text>
-<image src='/images/sanjiao.png'></image>
 </navigator>
+
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange"  value="{{multiIndex}}" range="{{multiArrayBegin}}">
 
@@ -79,8 +82,6 @@
 <view class='submit' bindtap='submit'>保存</view>
 
 <view class='submit' style="display:{{saveid&&saveid!=''?'block':'none'}}" bindtap='delsubmit'>删除</view>
-
-
 
 <view class='tan' style='display:{{tankuangstatus}}'>
   <view class='tankuang'> 
