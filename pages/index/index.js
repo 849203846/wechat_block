@@ -1,9 +1,9 @@
-//index.js
-//获取应用实例
+var utils = require('../..//utils/util.js')
 const app = getApp()
 
 Page({
   data: {
+    page:'1',
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
@@ -13,9 +13,9 @@ Page({
     duration: 1000
   },
   //事件处理函数
-  bindViewTap: function() {
+  gotosousuo: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../sousuo/sousuo'
     })
   },
   onLoad: function () {
@@ -46,6 +46,16 @@ Page({
       })
     }
   },
+  onShow:function(){
+    // getposition
+    utils.sendRrquest('getposition', 1, {})
+    .then((res)=>{
+      console.log(res.data.data.data)
+      this.setData({
+        list:res.data.data.data
+      })
+    })
+  },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -54,9 +64,23 @@ Page({
       hasUserInfo: true
     })
   },
-  gotopositionItel:function(){
+  gotopositionItel:function(e){
+    console.log(e)
     wx.navigateTo({
-      url: '../positionItel/positionItel',
+      url: '../positionItel/positionItel?id=' + e.target.dataset.id
     })
+  },
+  onReachBottom: function () {
+    var page = ++this.data.page
+    var data={
+      page: page
+    }
+    utils.sendRrquest('getposition', 1, data)
+      .then((res) => {
+        this.setData({
+          page: page,
+          list: [...this.data.list, ...res.data.data.data]
+        })
+      })
   }
 })

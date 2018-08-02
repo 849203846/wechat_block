@@ -1,66 +1,50 @@
-// pages/positionItel/positionItel.js
+var utils = require('../..//utils/util.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  data: {},
   onLoad: function (options) {
-  
+    console.log(options)
+    var data={
+      id: options.id
+    }
+    utils.sendRrquest('getpositioninfo', 1, data)
+    .then((res)=>{
+      console.log(res.data.data)
+      var data=res.data.data
+      this.setData({
+        area_name: data.area_name,
+        company_shortname: data.company_shortname,
+        id: data.id,
+        logo_url: data.logo_url,
+        max_pay: data.max_pay,
+        min_education: data.min_education,
+        min_pay: data.min_pay,
+        position: data.position,
+        recruiters: data.recruiters,
+        user_id: data.user_id,
+        work_exp: data.work_exp,
+        wx_avatar_url: data.wx_avatar_url,
+        work_exp: data.work_exp,
+        real_name: data.real_name,
+        min_education: data.min_education,
+        tag_one:data.tag_one,
+        tag_two:data.tag_two,
+        tag_three:data.tag_three,
+        company_fullname: data.company_fullname,
+        trade: data.trade,
+        logo_url: data.logo_url,
+        address: data.address,
+        describe: data.describe,
+        com_id: data.com_id
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
   
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  companyHome:function(){
+    wx.navigateTo({
+      url: '../companyHome/companyHome?id='+this.data.com_id
+    })
   }
 })

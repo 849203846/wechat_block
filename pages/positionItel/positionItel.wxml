@@ -3,19 +3,19 @@
 <view class='header'>
   <view class='headerone'>
     <view>
-      <text>高级前端开发工程师</text>
-      <text>1-2k</text>
+      <text>{{position}}</text>
+      <text>{{min_pay}}-{{max_pay}}k</text>
     </view>
-    <view>北京|海淀区|上地|3-5年|本科</view>
+    <view>{{area_name}}|{{work_exp}}|{{min_education}}</view>
   </view>
 
   <view class='headertwo'>
-    <image src='/images/man.png'></image>
+    <image src='{{wx_avatar_url}}'></image>
     <view>
-      <text>王林</text>
-      <text>刚刚活跃</text>
+      <text>{{real_name}}</text>
+      <!-- <text>刚刚活跃</text> -->
     </view>
-    <view>HR</view>
+    <view>{{recruiters}}</view>
   </view>
 </view>
 
@@ -27,7 +27,7 @@
   </view>
   <view class='description'>
     <view class='descriptiontitle'>职位描述</view>
-    <view>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+    <view>{{describe}}</view>
   </view>
 
 
@@ -35,14 +35,15 @@
       <text></text>
       <text>技能标签</text>
   </view>
-   <view class='SkillLbael'>虚拟化</view>
-
+   <view class='SkillLbael'>{{tag_one}}</view>
+      <view class='SkillLbael'>{{tag_three}}</view>
+      <view class='SkillLbael'>{{tag_two}}</view>
   <view style='height:.36rem;background:#fafafa;margin-top:1rem;'></view>
 
-  <view class='company'>
-    <image src='/images/man.png' class='companylogo'></image>
-    <view class='companyname'>布洛克科技文化有限公司</view>
-    <view class='CompanyProfile'>移动互联网</view>
+  <view class='company' bindtap='companyHome'>
+    <image src='{{logo_url}}' class='companylogo'></image>
+    <view class='companyname'>{{company_fullname}}</view>
+    <view class='CompanyProfile'>{{trade}}</view>
   </view>
   <view class='title'>
       <text></text>
@@ -50,7 +51,7 @@
   </view>
 
   <view class='WorkingRess'>
-    <text>北京市海淀区财智大厦</text>
+    <text>{{address}}</text>
     <image src='/images/sanjiao.png'></image>
   </view>
 

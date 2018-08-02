@@ -1,26 +1,26 @@
 // chat.js
 let toast = require('../../utils/toast.js');
 let chatInput = require('../../modules/chat-input/chat-input');
+0
+var utils = require('../..//utils/util.js')
+var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    list:[],
     friendHeadUrl: '',
     textMessage: '',
     chatItems: [],
     scrollTopTimeStamp: 0,
   },
-
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad: function(options) {
+    var id = options.id
+    this.setData({
+      id: id
+    })
     this.initData();
+    this.opensoit()
   },
-  initData: function () {
+  initData: function() {
     let that = this;
     let systemInfo = wx.getSystemInfoSync();
     chatInput.init(this, {
@@ -28,16 +28,16 @@ Page({
       minVoiceTime: 1,
       maxVoiceTime: 60,
       startTimeDown: 56,
-      format: 'mp3',//aac/mp3
+      format: 'mp3', //aac/mp3
       sendButtonBgColor: 'mediumseagreen',
       sendButtonTextColor: 'white',
       extraArr: [{
-        picName: 'choose_picture',
-        description: '照片'
-      }, {
-        picName: 'take_photos',
-        description: '拍摄'
-      },
+          picName: 'choose_picture',
+          description: '照片'
+        }, {
+          picName: 'take_photos',
+          description: '拍摄'
+        },
         // {
         //     picName: 'close_chat',
         //     description: '自定义功能'
@@ -56,44 +56,102 @@ Page({
     that.extraButton();
     that.voiceButton();
   },
-  textButton: function () {
-    chatInput.setTextMessageListener(function (e) {
+  opensoit: function() {
+    var data={
+      type: 'connect',
+      uid: wx.getStorageSync('userInfo').user_id,
+      fid :5
+    }
+    debugger
+    wx.connectSocket({
+      url: 'wss://workerman.zhangchaoqun.cn:3088',
+      data:data
+    })
+    wx.onSocketMessage((res) =>{
+      console.log('收到服务器内容：' + res.data)
+      var list = this.data.list
+      list.push(res.data)
+      this.setData({
+        list
+      })
+    })
+    wx.onSocketOpen(function(res) {
+      
+        var data = {
+          type: 'connect',
+          uid: wx.getStorageSync('userInfo').user_id,
+          fid: 5
+        };
+        var dataJson = JSON.stringify(data);
+        wx.sendSocketMessage({
+          data: dataJson
+        })
+        setInterval(()=>{
+          var datas = {
+            type: 'send',
+            uid: wx.getStorageSync('userInfo').user_id,
+            fid: 5
+          };
+          datas.content = '你叫谢大脚';
+          var dataJsons = JSON.stringify(datas);
+          wx.sendSocketMessage({
+            data: dataJsons
+          })
+      },5000)
+
+   
+    })
+    wx.onSocketError(function (res) {
+      console.log('WebSocket连接打开失败，请检查！')
+    })
+    wx.onSocketClose(function (res) {
+      console.log('WebSocket 已关闭！')
+    })
+    wx.onSocketError(function(res) {
+      console.log('WebSocket连接打开失败，请检查！')
+    })
+
+
+  },
+  textButton: function() {
+    chatInput.setTextMessageListener(function(e) {
       let content = e.detail.value;
       console.log(content);
+
     });
   },
-  voiceButton: function () {
-    chatInput.recordVoiceListener(function (res, duration) {
+  voiceButton: function() {
+    chatInput.recordVoiceListener(function(res, duration) {
       let tempFilePath = res.tempFilePath;
       let vDuration = duration;
       console.log(tempFilePath, vDuration);
     });
-    chatInput.setVoiceRecordStatusListener(function (status) {
+    chatInput.setVoiceRecordStatusListener(function(status) {
       switch (status) {
-        case chatInput.VRStatus.START://开始录音
+        case chatInput.VRStatus.START: //开始录音
 
           break;
-        case chatInput.VRStatus.SUCCESS://录音成功
+        case chatInput.VRStatus.SUCCESS: //录音成功
 
           break;
-        case chatInput.VRStatus.CANCEL://取消录音
+        case chatInput.VRStatus.CANCEL: //取消录音
 
           break;
-        case chatInput.VRStatus.SHORT://录音时长太短
+        case chatInput.VRStatus.SHORT: //录音时长太短
 
           break;
-        case chatInput.VRStatus.UNAUTH://未授权录音功能
+        case chatInput.VRStatus.UNAUTH: //未授权录音功能
 
           break;
-        case chatInput.VRStatus.FAIL://录音失败(已经授权了)
+        case chatInput.VRStatus.FAIL: //录音失败(已经授权了)
 
           break;
       }
     })
   },
-  extraButton: function () {
+  extraButton: function() {
     let that = this;
-    chatInput.clickExtraListener(function (e) {
+    chatInput.clickExtraListener(function(e) {
       console.log(e);
       let itemIndex = parseInt(e.currentTarget.dataset.index);
       if (itemIndex === 2) {
@@ -104,22 +162,22 @@ Page({
         count: 1, // 默认9
         sizeType: ['compressed'],
         sourceType: itemIndex === 0 ? ['album'] : ['camera'],
-        success: function (res) {
+        success: function(res) {
           let tempFilePath = res.tempFilePaths[0];
         }
       });
     });
-    chatInput.setExtraButtonClickListener(function (dismiss) {
+    chatInput.setExtraButtonClickListener(function(dismiss) {
       console.log('Extra弹窗是否消息', dismiss);
     })
   },
-  myFun: function () {
+  myFun: function() {
     wx.showModal({
       title: '小贴士',
       content: '这是用于拓展的自定义功能！',
       confirmText: '确认',
       showCancel: true,
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           toast.show('success', '自定义功能')
         }
@@ -127,7 +185,7 @@ Page({
     })
   },
 
-  resetInputStatus: function () {
+  resetInputStatus: function() {
     chatInput.closeExtraView();
   },
 });

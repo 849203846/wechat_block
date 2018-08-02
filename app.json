@@ -27,7 +27,9 @@
     "pages/posAchieve/posAchieve",
     "pages/projAchieve/projAchieve",
     "pages/projDescription/projDescription",
-    "pages/studyExperience/studyExperience"
+    "pages/studyExperience/studyExperience",
+    "pages/sousuo/sousuo",
+    "pages/companyHome/companyHome"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -44,10 +46,10 @@
         "text": "职位"
       },
       {
-        "pagePath": "pages/chat/chat",
-        "iconPath": "images/my_light.png",
-        "selectedIconPath": "images/my_light1.png",
-        "text": "消息"
+      "pagePath": "pages/chat/chat",
+      "iconPath": "images/my_light.png",
+      "selectedIconPath": "images/my_light1.png",
+      "text": "消息"
       },
       {
         "pagePath": "pages/logs/logs",

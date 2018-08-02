@@ -1,1 +1,4 @@
-@import "../../modules/chat-input/chat-input.wxss"; 
+@import "../../modules/chat-input/chat-input.wxss";
+page {
+    background-color: #EFEFEF;
+}

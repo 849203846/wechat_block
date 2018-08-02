@@ -13,17 +13,20 @@
   </swiper>
 </view>
  <button open-type="getUserInfo">aaaaaaaaaaa</button> 
+<block wx:for="{{list}}">
 
-<view class='positionItel' bindtap='gotopositionItel'>
-  <text class='Title'>WEB高级前端开发工程师</text>
-  <text class='money'>1-2K</text>
-  <view class='body'>北京 | 5年 | 本科</view>
-  <view class='company'>
-    <image class='companyLogo' src='/images/interested.png' ></image>
-    <text class='companyname'>布洛克财经</text>
+<view class='positionItel' bindtap='gotopositionItel' data-id='{{item.id}}'>
+  <text  data-id='{{item.id}}' class='Title'>{{item.position}}</text>
+  <text  data-id='{{item.id}}' class='money'>{{item.min_pay}}-{{item.max_pay}}K</text>
+  <view  data-id='{{item.id}}' class='body'>{{item.area_name}} | {{item.workexp}} | {{item.education}}</view>
+  <view  data-id='{{item.id}}' class='company'>
+    <image  data-id='{{item.id}}' class='companyLogo' src='/images/interested.png' ></image>
+    <text  data-id='{{item.id}}' class='companyname'>{{item.company_shortname}}</text>
   </view>
 </view>
+</block>
 
+<!-- 
 <view class='positionItel'>
   <text class='Title'>WEB高级前端开发工程师</text>
   <text class='money'>1-2K</text>
@@ -42,4 +45,4 @@
     <image class='companyLogo' src='/images/interested.png'></image>
     <text class='companyname'>布洛克财经</text>
   </view>
-</view>
+</view> -->
