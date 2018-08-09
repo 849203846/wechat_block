@@ -8,14 +8,14 @@
 </view>
 
 <navigator class='addintention' url='../positionType/positionType?saveid={{saveid}}' >
-<image src='/images/bao.png'></image>
+<image src='/images/hangye.png'></image>
 <text>公司行业</text>
 <text>{{trade}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <navigator   bindtap='gongsihangye' class='addintention'>
-<image src='/images/bao.png'></image>
+<image src='/images/leixin.png'></image>
 <text>职位类型</text>
 <text>{{job_id_name}}</text>
 <image src='/images/sanjiao.png'></image>
@@ -34,21 +34,21 @@
   </view>
 
 <view class='addintention' bindtap='gotojinengbiaoqian'>
-<image src='/images/bao.png'></image>
+<image src='/images/biaoqian.png'></image>
 <text>技能标签</text>
 <text>{{tag_one}}</text>
 <image src='/images/sanjiao.png'></image>
 </view>
 
 <view class='addintention' bindtap='setdivision'>
-<image src='/images/bao.png'></image>
+<image src='/images/bumen.png'></image>
 <text>所属部门</text>
 <text>{{division}}</text>
 <image src='/images/sanjiao.png'></image>
 </view>
 
 <navigator url='../content/content?type=content&content={{work_content}}' class='addintention' >
-<image src='/images/bao.png'></image>
+<image src='/images/zhuanye.png'></image>
 <text>工作内容</text>
 <text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
@@ -56,15 +56,16 @@
 
 
 <navigator class='addintention' url='../content/content?type=contents&content={{work_ach}}' >
-<image src='/images/bao.png'></image>
+<image src='/images/yeji.png'></image>
 <text>工作业绩</text>
-<text></text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
 </navigator>
 
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange"  value="{{multiIndex}}" range="{{multiArrayBegin}}">
 
-<image src='/images/bao.png'></image>
+<image src='/images/time.png'></image>
 <text>开始时间</text>
   <text  class="picker" >{{multiArrayBegin[0][multiIndex[0]]}}-{{multiArrayBegin[1][multiIndex[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
@@ -72,7 +73,7 @@
 
   <picker mode="multiSelector" class='addintention' value="{{multiIndexs}}" bindchange="bindMultiPickerChanges"  range="{{multiArrayOver}}">
 
-  <image src='/images/bao.png'></image>
+  <image src='/images/time.png'></image>
 <text>结束时间</text>
   <text  class="picker" >{{multiArrayOver[0][multiIndexs[0]]}}-{{multiArrayOver[1][multiIndexs[1]]}}</text>
   <image src='/images/sanjiao.png'></image>

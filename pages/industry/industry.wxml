@@ -15,3 +15,7 @@
 </view>
 </view>
 </block>
+
+
+
+<view class='btn' bindtap='fanhui'>确定</view>

@@ -206,4 +206,10 @@ Page({
     //   delta:1
     // })
   }
+  ,
+  fanhui:function(){
+    wx.navigateBack({
+      delta:1
+    })
+  }
 })

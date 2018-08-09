@@ -171,6 +171,7 @@ opensetname: function() {
     })
   },
   setnames: function () {
+    console.log(this.data.tankuangname)
     if (this.data.tankuangname === '职位名称'){
       this.setData({
         job_name: this.data.name,
@@ -208,18 +209,7 @@ opensetname: function() {
       name: e.detail.value
     })
   },
-  setnames: function () {
-    if (this.data.tankuangname === '姓名') {
-      this.setData({
-        realname: this.data.name
-      })
-    } else {
-      this.setData({
-        wechartel: this.data.name
-      })
-    }
-    this.close()
-  },
+
 
   gongsihangye: function () {
     wx.navigateTo({

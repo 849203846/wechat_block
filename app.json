@@ -16,7 +16,6 @@
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/myadvantage/myadvantage",
-    "pages/componyName/componyName",
     "pages/positionType/positionType",
     "pages/getskill/getskill",
     "pages/workExperience/workExperience",
@@ -29,12 +28,14 @@
     "pages/projDescription/projDescription",
     "pages/studyExperience/studyExperience",
     "pages/sousuo/sousuo",
+    "pages/chatliat/chatliat",
+    "pages/getuser/getuser",
     "pages/companyHome/companyHome"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "布洛克直聘",
+    "navigationBarTitleText": "火聘online",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
@@ -46,9 +47,9 @@
         "text": "职位"
       },
       {
-      "pagePath": "pages/chat/chat",
-      "iconPath": "images/my_light.png",
-      "selectedIconPath": "images/my_light1.png",
+      "pagePath": "pages/chatliat/chatliat",
+      "iconPath": "images/xiaoxi.png",
+      "selectedIconPath": "images/xiaoxi1.png",
       "text": "消息"
       },
       {
@@ -59,6 +60,6 @@
       }
       
     ],
-    "selectedColor":"#9233eb"
+    "selectedColor":"#f59800"
   }
 }

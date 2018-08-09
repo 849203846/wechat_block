@@ -3,6 +3,9 @@ const app = getApp()
 Page({
   data: {},
   onLoad: function (options) {
+    wx.showLoading({
+      title: '获取中',
+    })
     console.log(options)
     var data={
       id: options.id
@@ -37,6 +40,7 @@ Page({
         describe: data.describe,
         com_id: data.com_id
       })
+      wx.hideLoading()
     })
   },
   onShow: function () {
@@ -45,6 +49,11 @@ Page({
   companyHome:function(){
     wx.navigateTo({
       url: '../companyHome/companyHome?id='+this.data.com_id
+    })
+  },
+  gotochat:function(){
+    wx.navigateTo({
+      url:'../chat/chat?fid=' + this.data.user_id
     })
   }
 })

@@ -12,23 +12,23 @@
     value="{{multiIndex}}" 
     range="{{selectorArray}}"
   >
-   <image src='/images/weixin.png'></image>
+   <image src='/images/xingbie.png'></image>
   <text>性别</text>
   <text>{{selectorArray[Sex]}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
 
 
-     <picker  class='informationItem' mode="date" value="{{brith_at}}" start="2015-09-01" end="2017-09-01" bindchange="bindbrith_atChange">
-   <image src='/images/weixin.png'></image>
+     <picker  class='informationItem' mode="date" value="{{brith_at}}" bindchange="bindbrith_atChange">
+   <image src='/images/rili.png'></image>
   <text>出身年月</text>
   <text>{{brith_at}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
 
 
-   <picker  class='informationItem' mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-   <image src='/images/weixin.png'></image>
+   <picker  class='informationItem' mode="date" value="{{date}}"  bindchange="bindDateChange">
+   <image src='/images/rili.png'></image>
   <text>参加工作时间</text>
   <text>{{date}}</text>
   <image src='/images/sanjiao.png'></image>

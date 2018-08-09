@@ -10,9 +10,9 @@ Page({
     username: '未登录',
     userAg0: '点击头像可登录/注册', 
     avatarUrl: "/images/my_light.png",
-    phonenum:'18230039253',
+    phonenum:'',
     wantedlist: ['离职-随时到岗', '在职-暂不考虑', '在职-考虑机会', '在职-月内到岗'],
-    weChatUserphone:'wanglinjs1',
+    weChatUserphone:'',
     wantedstatus:'1',
     myadvantagetext:'月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗月内到岗'
   },

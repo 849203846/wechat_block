@@ -67,7 +67,7 @@
 }
 .navigator-hover {
   background: white;
-  color: #9233eb;
+  color: #f59800;
 }
 .login{
   position: fixed;

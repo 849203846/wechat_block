@@ -1,20 +1,20 @@
 
 <navigator class='addintention' bindtap='opentankuang' >
-<image src='/images/bao.png'></image>
+<image src='/images/zhiwei.png'></image>
 <text>项目名称</text>
 <text>{{name}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <navigator class='addintention' bindtap='lianjietankuang'>
-<image src='/images/bao.png'></image>
+<image src='/images/lianjie.png'></image>
 <text>项目链接</text>
 <text>{{link}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <navigator  class='addintention' bindtap='jveseopentankuang'>
-<image src='/images/bao.png'></image>
+<image src='/images/hangye.png'></image>
 <text>项目角色</text>
 <text>{{role}}</text>
 <image src='/images/sanjiao.png'></image>
@@ -23,7 +23,7 @@
 <navigator url='../content/content?type=desc&content={{desc}}'
  class='addintention'>
 
-<image src='/images/bao.png'></image>
+<image src='/images/zhuanye.png'></image>
 <text>项目描述</text>
 <text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
@@ -32,7 +32,7 @@
 
 <navigator url='../content/content?type=exper&content={{exper}}'
  class='addintention'>
-<image src='/images/bao.png'></image>
+<image src='/images/yeji.png'></image>
 <text>项目业绩</text>
 <text>点击查看</text>
 <image src='/images/sanjiao.png'></image>
@@ -40,7 +40,7 @@
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayBegin}}">
 
-<image src='/images/bao.png'></image>
+<image src='/images/time.png'></image>
 <text>开始时间</text>
   <text  class="picker" >{{multiArrayBegin[0][start_atArray[0]]}}-{{multiArrayBegin[1][start_atArray[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
@@ -48,7 +48,7 @@
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChanges" value="{{multiIndex}}" range="{{multiArrayOver}}">
 
-  <image src='/images/bao.png'></image>
+  <image src='/images/time.png'></image>
 <text>结束时间</text>
   <text  class="picker" >{{multiArrayOver[0][end_at[0]]}}-{{multiArrayOver[1][end_at[1]]}}</text>
   <image src='/images/sanjiao.png'></image>

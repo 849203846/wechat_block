@@ -3,7 +3,7 @@
 </view>
 <view style='    height: 2rem;'></view> -->
 
-<block  wx:for="{{jobsOne}}"  wx:for-item="item">
+<block  wx:for="{{jobsOne}}"  wx:for-item="item" >
 <view data-id='{{item.id}}' bindtap='click'>
 {{item.job}}
 </view>
@@ -16,8 +16,8 @@
     <view  wx:for="{{jobstwo}}" bindtap='getrightbox'   wx:for-item="item" data-job='{{item.job}}' data-id='{{item.id}}'>
     {{item.job}}
     </view>
-        <view  wx:for="{{jobstwo}}" bindtap='getrightbox'  wx:for-item="item" data-id='{{item.id}}'>
+        <!-- <view  wx:for="{{jobstwo}}" bindtap='getrightbox'  wx:for-item="item" data-id='{{item.id}}'>
     {{item.job}}
-    </view>
+    </view> -->
   </scroll-view>
 </view>

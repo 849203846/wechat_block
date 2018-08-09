@@ -1,26 +1,26 @@
 <navigator  class='addintention' bindtap='opentankuangstatus'>
-<image src='/images/bao.png'></image>
+<image src='/images/xuexiao.png'></image>
 <text>学校名称</text>
 <text>{{school}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
  <picker mode="selector" class='addintention' bindchange='bindPickerChange' value="{{degree}}" range="{{multiArrayEdu}}">
-  <image src='/images/bao.png'></image>
+  <image src='/images/xueli.png'></image>
   <text>学历水平</text>
   <text  class="picker" >{{multiArrayEdu[degree]}}</text>
   <image src='/images/sanjiao.png'></image>
 </picker> 
 
 <navigator  class='addintention' bindtap="addintention">
-<image src='/images/bao.png'></image>
+<image src='/images/zhuanye.png'></image>
 <text>专业名称</text>
 <text>{{major_name}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <picker mode="multiSelector" class='addintention' bindchange='setstart_at' value="{{multiIndex}}" range="{{multiArrayYear}}">
-  <image src='/images/bao.png'></image>
+  <image src='/images/time.png'></image>
   <text>时间段</text>
   <text  class="picker" >{{multiArrayYear[0][start_at[0]]}}-{{multiArrayYear[1][start_at[1]]}}</text>
   <image src='/images/sanjiao.png'></image>
@@ -28,7 +28,7 @@
 
 
 <navigator  class='addintention' url='../content/content?type=exper&content={{exper}}' >
-<image src='/images/bao.png'></image>
+<image src='/images/jingli.png'></image>
 <text>在校经历</text>
 <text>选填</text>
 <image src='/images/sanjiao.png'></image>

@@ -1,21 +1,21 @@
-<view class="Tips">您的多个意向都会被Boss看到,请认真填写</view>
+<view class="Tips">您的多个意向都会被火聘者看到,请认真填写</view>
 
 <navigator url='../ExpectedPosition/ExpectedPosition?id={{id}}' class='addintention' >
-<image src='/images/bao.png'></image>
+<image src='/images/zhiwei.png'></image>
 <text>期望职位</text>
 <text>{{fidname}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <navigator class='addintention' url='../industry/industry?id={{id}}'>
-<image src='/images/bao.png'></image>
+<image src='/images/hangye.png'></image>
 <text>期望行业</text>
 <text>{{trade_name_one}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
 
 <navigator url='../setCity/setCity?id={{id}}' class='addintention'>
-<image src='/images/bao.png'></image>
+<image src='/images/chengshi.png'></image>
 <text>工作城市</text>
 <text>{{area_name}}</text>
 <image src='/images/sanjiao.png'></image>
@@ -24,7 +24,7 @@
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
 
-<image src='/images/bao.png'></image>
+<image src='/images/xinzi.png'></image>
 <text>薪资要求</text>
   <text  class="picker" >{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}</text>
   <image src='/images/sanjiao.png'></image>

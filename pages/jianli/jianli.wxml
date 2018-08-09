@@ -1,16 +1,16 @@
 <view class='header'>
   <view class='headerTitle'>
-    <view>{{username}}
+    <view>{{username==''?'未设置姓名':username}}
     <text bindtap='gotomyname'>编辑</text>
     </view>
     <view>{{userAg0}}</view>
     <view class='phonenum'>
-      <image src='/images/phone.png'></image>
+      <image src='../../images/Phone.png'></image>
       <text>{{phonenum}}</text>
     </view>
     <view class='weChatUserphone'>
       <image src='/images/wechatblack.png'></image>
-      <text>{{weChatUserphone}}</text>
+      <text>{{weChatUserphone==''?'未设置微信号':weChatUserphone}}</text>
     </view>
   </view>
   <image src='{{avatarUrl}}'></image>
@@ -19,14 +19,7 @@
 
 
 
-<view class='myadvantage'>
-<view class='title'>
-  <text></text>
-  <text>我的优势</text>
-  <text bindtap='gomyadvantage'>编辑</text>
-  </view>
-  <view class='myadvantagetext'>{{introduce}}</view>
-</view>
+
 
 
 
@@ -137,6 +130,14 @@
 </view>
 
 
+<view class='myadvantage'>
+<view class='title'>
+  <text></text>
+  <text>我的优势</text>
+  <text bindtap='gomyadvantage'>编辑</text>
+  </view>
+  <view class='myadvantagetext'>{{introduce}}</view>
+</view>
 
 <view class='EducationalExperience'>
  <view class='title'>

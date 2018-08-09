@@ -66,9 +66,7 @@ Page({
 
     utils.sendRrquest('getjobs', 1, data)
       .then((res) => {
-        console.log(res)
         if (res.data.status === '200') {
-          console.log(res.data.data)
           this.setData({
             rightboxtwo: 'block',
             jobstwo: res.data.data
@@ -93,7 +91,6 @@ Page({
             if(res.data[i].id==this.data.id){
               res.data[i].job_id=fid
               res.data[i].job_name = job
-              debugger
               wx.setStorage({
                 key: 'willlist',
                 data: res.data,

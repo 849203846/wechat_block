@@ -63,6 +63,6 @@ page{
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #9233eb;  
+  background: #f59800;  
   border-radius: 50px;
 }

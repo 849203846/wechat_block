@@ -23,7 +23,7 @@
   font-size: 1rem;
 }
 .header .headerTitle view:nth-child(1) text{
-  color: purple;
+  color: #f59800;
   font-size: .8rem;
 
 }
@@ -38,6 +38,7 @@
   height: 1rem;
   margin-right: .5rem;
   vertical-align: top;
+  margin-top: .3rem;
 }
 .header .headerTitle .weChatUserphone text{
   vertical-align: top;
@@ -65,7 +66,7 @@
   display: inline-block;
   width: .5rem;
   height: 1rem;
-  background: purple;
+  background: #f59800;
   /* margin-top: 1.5rem; */
   margin-left: 1rem;
   vertical-align: middle;
@@ -77,9 +78,10 @@
   vertical-align: middle;
 }
 .title text:nth-child(3){
-  color: purple;
+  color: #f59800;
   vertical-align: middle;
   float: right;
+  font-size: .8rem;
   padding-right: 1rem;
 }
 .myadvantagetext{
@@ -118,7 +120,7 @@
 }
 .myintentionbody view>text:nth-child(2){
   text-align: right;
-  color: purple;
+  color: #f59800;
   float: right;
   margin-right: 1rem;
 }
@@ -141,7 +143,7 @@
 }
 .companyname navigator{
   float: right;
-  color: purple;
+  color: #f59800;
   font-size: .8rem;
   margin-right: 1rem;
 }
@@ -185,7 +187,7 @@
   left: 50%;
   top: 50%;
   margin-left: -8.75rem;
-  margin-top: -6rem;
+  margin-top: -12rem;
 }
 .tankuang view:nth-child(1){
   height: 3rem;
@@ -197,7 +199,7 @@
   margin-right: -2rem;
 }
 .tankuang view:nth-child(1) text:nth-child(2){
-  color: #932fe9;
+  color: #f59800;
   float: right;
   margin-right: 1rem;
 }
@@ -212,7 +214,7 @@
 .tankuang view:nth-child(3){
   text-align: center;
   line-height: 2.8rem;
-  height: 2.8rem;color: #932fe9;
+  height: 2.8rem;color: #f59800;
   border-top: 1px solid #bababa;
   font-size: 1.2rem;
   display: flex;

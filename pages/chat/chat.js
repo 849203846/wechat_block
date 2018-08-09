@@ -1,24 +1,64 @@
-// chat.js
 let toast = require('../../utils/toast.js');
 let chatInput = require('../../modules/chat-input/chat-input');
-0
 var utils = require('../..//utils/util.js')
 var app = getApp()
 Page({
   data: {
+    page:1,
+    fid:5,
     list:[],
     friendHeadUrl: '',
     textMessage: '',
     chatItems: [],
     scrollTopTimeStamp: 0,
+    toView:'red',
+    scrollTop:500
   },
   onLoad: function(options) {
-    var id = options.id
+    var fid = options.fid
     this.setData({
-      id: id
+      fid: fid,
+      
     })
+    setTimeout(()=>{
+      this.setData({
+        scrollTop: 500,
+      })
+    },200)
+    var data={
+      fid,
+      page:1,
+      uid: wx.getStorageSync('userInfo').user_id,
+    }
+    utils.sendRrquest('getchatinfo', 1, data)
+      .then((res) => {
+        console.log(res.data.data)
+        this.setData({
+          list: res.data.data.chatData.data,
+          fid_avatar_url: res.data.data.fid_avatar_url,
+          uid_avatar_url: res.data.data.uid_avatar_url
+        })
+      })
     this.initData();
     this.opensoit()
+  },
+  getpage:function(){
+    this.setData({
+      page:++this.data.page
+    })
+    var data = {
+      fid:this.data.fid,
+      page:this.data.page,
+      uid: wx.getStorageSync('userInfo').user_id,
+    }
+    utils.sendRrquest('getchatinfo', 1, data)
+      .then((res) => {
+        if (res.data.data.chatData.data.length==0)return 
+        var list=this.data.list
+        this.setData({
+          list: [...res.data.data.chatData.data,...list]
+        })
+      })
   },
   initData: function() {
     let that = this;
@@ -31,13 +71,14 @@ Page({
       format: 'mp3', //aac/mp3
       sendButtonBgColor: 'mediumseagreen',
       sendButtonTextColor: 'white',
-      extraArr: [{
-          picName: 'choose_picture',
-          description: '照片'
-        }, {
-          picName: 'take_photos',
-          description: '拍摄'
-        },
+      extraArr: [
+        // {
+        //   picName: 'choose_picture',
+        //   description: '照片'
+        // }, {
+        //   picName: 'take_photos',
+        //   description: '拍摄'
+        // },
         // {
         //     picName: 'close_chat',
         //     description: '自定义功能'
@@ -58,48 +99,37 @@ Page({
   },
   opensoit: function() {
     var data={
-      type: 'connect',
+      type: 'login',
       uid: wx.getStorageSync('userInfo').user_id,
-      fid :5
+      fid :this.data.fid
     }
-    debugger
     wx.connectSocket({
       url: 'wss://workerman.zhangchaoqun.cn:3088',
       data:data
     })
     wx.onSocketMessage((res) =>{
       console.log('收到服务器内容：' + res.data)
+      var data = JSON.parse(res.data)
+      console.log(data)
       var list = this.data.list
-      list.push(res.data)
+      if (data.type == 'ping' || data.type == 'login' || data.uid == wx.getStorageSync('userInfo').user_id){
+        return 
+      }
+      list.push(data)
       this.setData({
-        list
+        list,
+        scrollTop:99999
       })
     })
-    wx.onSocketOpen(function(res) {
-      
+    wx.onSocketOpen((res) => {
         var data = {
-          type: 'connect',
+          type: 'login',
           uid: wx.getStorageSync('userInfo').user_id,
-          fid: 5
+          fid: this.data.fid,
         };
-        var dataJson = JSON.stringify(data);
         wx.sendSocketMessage({
-          data: dataJson
+          data: JSON.stringify(data)
         })
-        setInterval(()=>{
-          var datas = {
-            type: 'send',
-            uid: wx.getStorageSync('userInfo').user_id,
-            fid: 5
-          };
-          datas.content = '你叫谢大脚';
-          var dataJsons = JSON.stringify(datas);
-          wx.sendSocketMessage({
-            data: dataJsons
-          })
-      },5000)
-
-   
     })
     wx.onSocketError(function (res) {
       console.log('WebSocket连接打开失败，请检查！')
@@ -114,10 +144,31 @@ Page({
 
   },
   textButton: function() {
+    var that=this
     chatInput.setTextMessageListener(function(e) {
       let content = e.detail.value;
       console.log(content);
-
+        var data = {
+          type: 'say',
+          uid: wx.getStorageSync('userInfo').user_id,
+          fid: that.data.fid,
+          content: content
+        };
+        wx.sendSocketMessage({
+          data: JSON.stringify(data)
+        })
+        var newdata={
+          content: content,
+          fid:that.data.fid,
+          time:new Date(),
+          uid: wx.getStorageSync('userInfo').user_id
+        }
+        var list = that.data.list
+        list.push(newdata)
+        that.setData({
+            list,
+          scrollTop: 99999 + that.data.scrollTop
+          })
     });
   },
   voiceButton: function() {
@@ -188,4 +239,11 @@ Page({
   resetInputStatus: function() {
     chatInput.closeExtraView();
   },
+  gotothis:function(e){
+    if (this.data.fid == e.target.dataset.fid)return
+    var id=this.data.id
+    wx.navigateTo({
+      url: '../positionItel/positionItel?id=' + id
+    })
+  }
 });

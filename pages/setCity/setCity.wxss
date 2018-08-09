@@ -1,4 +1,8 @@
-
+page{
+  width: 99.8%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 .oneinput{
   background: #eeeeee;
   padding-top: .36rem;
@@ -32,4 +36,5 @@ view{
   font-size: .8rem;
   width: 100%;
   padding-left: 1rem;
+  overflow: hidden;
 }

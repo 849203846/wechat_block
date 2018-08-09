@@ -6,13 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    area_name:'北京',
+    area_name:'未选择',
     multiIndex:[],
     multiArray: [
-      ['1k', '2k'],
-       ['3k', '4k', '5k', '6k', '7k']],
+      ['1k', '2k','3k', '4k', '5k', '6k', '7k'],
+      ['1k', '2k','3k', '4k', '5k', '6k', '7k','8k','9k','10k','11k','12k','13k','14k','15k',]],
   },
   onLoad:function(op){
+    var multiArray=[[],[]]
+    for(var i=1;i<250;i++){
+      multiArray[0].push(i+'k')
+      multiArray[1].push(i + 'k')
+    }
+    this.setData({
+      multiArray
+    })
     if (JSON.stringify(op)!='{}'){
       var id = op.id
       this.setData({
@@ -85,18 +93,24 @@ Page({
         trade_name_one: app.globalData.trade_name_one,
         trade_id_one: app.globalData.trade_id_one
       })
+      app.globalData.trade_name_one=''
+      app.globalData.trade_id_one=''
     }
     if (app.globalData.trade_name_three) {
       this.setData({
         trade_id_three: app.globalData.trade_id_three,
         trade_name_three: app.globalData.trade_name_three
       })
+      app.globalData.trade_id_three=''
+      app.globalData.trade_name_three=''
     }
     if (app.globalData.trade_name_two) {
       this.setData({
         trade_name_two: app.globalData.trade_name_two,
         trade_id_two: app.globalData.trade_id_two
       })
+      app.globalData.trade_id_two=''
+      app.globalData.trade_name_two=''
     }
   },
 
@@ -117,7 +131,8 @@ Page({
       pay_start: this.data.multiArray[0][this.data.multiIndex[0]].split('k')[0],//最低薪资
       pay_end: this.data.multiArray[1][this.data.multiIndex[1]].split('k')[0],
     }
-    if (this.data.id){
+    console.log(typeof this.data.id)
+    if (this.data.id && this.data.id !="undefined"){
       data.id = this.data.id
       utils.sendRrquest('savewill', 1, data)
       .then((res)=>{

@@ -5,9 +5,8 @@ Page({
   data: {
     page:'1',
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      '/images/banner1.jpg',
+      '/images/banner2.jpg',
     ],
     interval: 5000,
     duration: 1000
@@ -47,12 +46,14 @@ Page({
     }
   },
   onShow:function(){
+    app.getuser()
     // getposition
     utils.sendRrquest('getposition', 1, {})
     .then((res)=>{
       console.log(res.data.data.data)
       this.setData({
-        list:res.data.data.data
+        list:res.data.data.data,
+        page:'1'
       })
     })
   },

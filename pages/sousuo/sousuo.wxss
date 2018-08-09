@@ -72,9 +72,9 @@ page{
 .textbox{
   margin-left: 1rem;margin-right: 1rem;font-size: 0;
 }
-.textbox text:nth-child(4),.textbox text:nth-child(8),.textbox text:nth-child(12){
-  margin-right: 0;
-}
+/* .textbox text:nth-child(4),.textbox text:nth-child(8),.textbox text:nth-child(12){
+  margin-right: .2rem;
+} */
 .tanchu text{
   margin-top: .4rem;
   display: inline-block;
@@ -87,7 +87,8 @@ page{
   height: 1.56rem;
   line-height: 1.56rem;
   margin-right: .4rem;
-
+  padding-left: .4rem;
+  padding-right: .4rem;
 }
 .tanchubox{
   width: 100%;
@@ -113,7 +114,7 @@ page{
 }
 .btns view:nth-child(2){
   color: white;
-  background: #932fe9;
+  background: #f59800;
 }
 
 .positionItel{
@@ -131,7 +132,7 @@ page{
 .positionItel .money{
   position: absolute;
   right: 1rem;
-  color: #9233eb;
+  color: #f59800;
 }
 .body{
    margin-left: 1.1rem;

@@ -4,8 +4,8 @@
     <view class="input-flex-column" catchtap="null">
         <view class="input-text-voice-super">
             <block wx:if="{{showVoicePart}}">
-                <image src="../../image/chat/voice/{{inputObj.inputStatus==='voice'?'keyboard':'voice'}}.png"
-                       class="extra-btn-style" bindtap="changeInputWayEvent" />
+                <!-- <image src="../../image/chat/voice/{{inputObj.inputStatus==='voice'?'keyboard':'voice'}}.png"
+                       class="extra-btn-style" bindtap="changeInputWayEvent" /> -->
                 <block wx:if="{{inputObj.inputStatus==='voice'}}">
                     <template is="voice" data="{{voiceObj:inputObj.voiceObj,canUsePress:inputObj.canUsePress}}" />
                 </block>
@@ -14,9 +14,10 @@
                    class="chat-input-style" style="margin-left:{{showVoicePart?0:16}}rpx;"
                    maxlength="500" confirm-type="send" value="{{textMessage}}" bindconfirm="chatInputSendTextMessage" bindfocus="chatInputBindFocusEvent" bindblur="chatInputBindBlurEvent" bindinput="chatInputGetValueEvent"/>
             <view hover-class="press-style-opacity">
-                <view wx:if="{{inputObj.inputType==='text'}}" class="chat-input-send-button-style" style="background-color: {{inputObj.inputStyle.sendButtonBgColor}};color: {{inputObj.inputStyle.sendButtonTextColor}};" catchtap="chatInputSendTextMessage02">发送</view>
-                <image wx:else class="extra-btn-style"
-                       src="../../image/chat/extra.png" catchtap="chatInputExtraClickEvent" />
+            <!-- wx:if="{{inputObj.inputType==='text'}}" -->
+                <view  class="chat-input-send-button-style" style="background-color: {{inputObj.inputStyle.sendButtonBgColor}};color: {{inputObj.inputStyle.sendButtonTextColor}};" catchtap="chatInputSendTextMessage02">发送</view>
+                <!-- <image wx:else class="extra-btn-style"
+                       src="../../image/chat/extra.png" catchtap="chatInputExtraClickEvent" /> -->
             </view>
 
 

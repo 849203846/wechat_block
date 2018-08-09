@@ -6,7 +6,7 @@ Page({
    */
   data: {
     username:'未登录',
-    userAg0:'点击头像可登录/注册',
+    userAg0:'未设定',
     avatarUrl: "/images/my_light.png",
     loginstatus:'none',//登录态
     loginClose:'none'
@@ -23,6 +23,17 @@ Page({
         userAg0: '点击头像可登录/注册',
       })
     }
+    wx.getStorage({
+      key: 'userInfo',
+      success: (res) =>{
+        if(res.data){
+          this.setData({
+            username: res.data.realname,
+            userAg0: (2018 - res.data.birthday.split('-')[0]) + (res.data.gender == 1 ? '岁-男-' : '岁-女-') + (2018 - res.data.workday.split('-')[0] + '年'),
+          })
+        }
+      },
+    })
     
   },
 
@@ -72,7 +83,7 @@ Page({
   showModel:function(){
     wx.showModal({
       title: '温馨提示',
-      content: '使用布洛克直聘企业版小程序，发布职位，招聘牛人',
+      content: '使用火娉企业版小程序，发布职位，招聘牛人',
       showCancel: false,
       confirmText: '知道啦',
     })

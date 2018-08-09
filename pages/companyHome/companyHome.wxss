@@ -37,7 +37,7 @@ Page{
   font-size: 1rem;
   color: #000;
   padding-bottom:.5rem;
-  border-bottom: 2px solid #9233eb;
+  border-bottom: 2px solid #f59800;
   margin-left: 1rem;
 }
 .banner{
