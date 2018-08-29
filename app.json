@@ -5,14 +5,14 @@
     "pages/logs/logs",
     "pages/myintentionadd/myintentionadd",
     "pages/chat/chat",
-      "pages/setCity/setCity",
-          "pages/addintention/addintention",
+    "pages/setCity/setCity",
+    "pages/addintention/addintention",
     "pages/phonelogin/phonelogin",
     "pages/interested/interested",
     "pages/jianli/jianli",
     "pages/industry/industry",
-        "pages/ExpectedPosition/ExpectedPosition",
-       "pages/positionItel/positionItel",
+    "pages/ExpectedPosition/ExpectedPosition",
+    "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/myadvantage/myadvantage",
@@ -60,6 +60,6 @@
       }
       
     ],
-    "selectedColor":"#f59800"
+    "selectedColor":"#1eac8a"
   }
 }

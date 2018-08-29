@@ -14,7 +14,7 @@
 </view>
 
 
-<block wx:for="{{list}}">
+<block wx:for="{{list}}" wx:if="{{list.length}}">
 
 <view class='positionItel' bindtap='gotopositionItel' data-id='{{item.id}}'>
   <text  data-id='{{item.id}}' class='Title'>{{item.position}}</text>
@@ -26,3 +26,8 @@
   </view>
 </view>
 </block>
+
+
+<view wx:if="{{list.length==0}}" style='margin-top:5rem;text-align: center;'>
+    当前职位无招聘者
+</view>

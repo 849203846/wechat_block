@@ -42,18 +42,16 @@
 <view class='login' style='display:{{loginClose}}'>
   <view class='loginbox'>
     <view class='loginboxTitle'>
-      <view>登录</view>
+      <view>绑定手机号</view>
       <image bindtap='loginClose' class='loginClose' src='/images/loginClose.png'></image>
     </view>
-    <view class='loginbody' bindtap='wechatlogin'>
-      <button open-type="getPhoneNumber" class='loginwechat'>
-      <image src='/images/wechat.png'></image>  
-      <text>  微信帐号快速登录</text>
-      </button>
+    <view class='loginbody'>
+        <input type='text' bindinput='setphone' class='loginwechat' maxlength='11' placeholder='请输入手机号'></input>
     </view>
-     <view class='loginbody1' bindtap='phonelogin'>
-      <image src='/images/phone.png'></image>
-      <view class='loginwechat' >手机帐号登录/注册</view>
+     <view class='loginbody1' >
+     <input type='text' maxlength='6' placeholder='请输入验证码' bindinput='setname' placeholder-style='font-size:.8rem;padding-left:.2rem;'></input>
+      <view class='loginwechat' bindtap='verifysms' >{{setverifysms}}</view>
     </view>
+    <view class='submit' bindtap='savesendsms'>提交</view>
   </view>
 </view>

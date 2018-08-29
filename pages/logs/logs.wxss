@@ -81,7 +81,6 @@
 }
 .loginbox{
   width:  14.4rem;
-  height: 11.4rem;
   background: white;
   position: absolute;
   top: 50%;
@@ -113,25 +112,20 @@
   height: 2.2rem;
   width: 11rem;
   margin: 0 auto;
-  background: #1aac19;
   position: relative;
-  
-  border-radius: 5px;
 }
 .loginbody1{
   height: 2.2rem;
   width: 11rem;
   margin: 1rem auto 0;
   position: relative;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
 }
 .loginbody .loginwechat{
   height: 2.2rem;
   width: 11rem;
-  background: #1aac19;
-  color: white;
-  font-size: .8rem;
+  margin: 0 auto;
+  position: relative;
 }
 .loginbody .loginwechat image{
   margin-right: .5rem;
@@ -139,18 +133,28 @@
 .loginbody .loginwechat text{
   margin-left: 1rem;
 }
-.loginbody view{
-  color: white;
+.loginbody input{
   font-size: .8rem;
   position: absolute;
   top: .6rem;
-  left: 2.6rem;
+  left: 0;
+  border: 1px solid #bababa;
 }
 .loginbody1 view{
+  width: 5rem;
+   height: 2.2rem;
+  line-height: 2.2rem;
+  color: white;
+  background: #f98500;
   font-size: .8rem;
-  position: absolute;
-  top: .6rem;
-  left: 2.6rem;
+  text-align: center;
+  margin-left: .2rem;
+}
+.loginbody1 input{
+  flex: 1;
+  line-height: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid #bababa;
 }
 .loginbody image{
   width: .9rem;
@@ -159,15 +163,18 @@
   left: 1.4rem;
   top: .8rem;
 }
-.loginbody1 image{
-  width: .9rem;
-  height: 1rem;
-  position: absolute;
-  left: 1.4rem;
-  top: .6rem;
-}
+
 video{
   display: block;
   width: 100%;
   margin: 0 auto;
+}
+.submit{
+  width:11rem;
+  margin:1rem auto;
+  background: #f98500;
+  color: white;
+  text-align: center;
+  height: 2.2rem;
+  line-height: 2.2rem;
 }

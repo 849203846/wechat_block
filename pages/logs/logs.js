@@ -1,4 +1,5 @@
-var app=getApp()
+var utils = require('../..//utils/util.js')
+const app = getApp()
 Page({
 
   /**
@@ -9,12 +10,9 @@ Page({
     userAg0:'未设定',
     avatarUrl: "/images/my_light.png",
     loginstatus:'none',//登录态
-    loginClose:'none'
+    loginClose:'none',
+    setverifysms:'发送验证码'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     if (app.globalData.userInfo){
       this.setData({
@@ -34,37 +32,107 @@ Page({
         }
       },
     })
-    
   },
+  setphone:function(e){
+    this.setData({
+      phone:e.detail.value
+    })
+  },
+  verifysms:function(){
+    var data={
+      phone:this.data.phone,
 
+    }
+    if (data.phone.length!=11)return 
+    if (this.data.setverifysms =="重新发送"||this.data.setverifysms=='发送验证码'){
+      utils.sendRrquest('sendsms', 1, data)
+        .then((res) => {
+          if (res.data.status === '200') {
+            wx.showToast({
+              title: '发送成功',
+            })
+            var timer = 60
+            var timer = setInterval(() => {
+              --timer
+              this.setData({
+                setverifysms: '重新发送(' + timer + ')'
+              })
+              if (timer == 0) {
+                clearInterval(timer)
+                this.setData({
+                  setverifysms: '重新发送'
+                })
+              }
+            }, 1000)
+          } else {
+            wx.showModal({
+              title: '温馨提示',
+              content: '发送验证码失败',
+            })
+          }
+        })
+    }
 
-  outuser:function(){
-    // 退出登录
-    wx.showModal({
-      title: '确定要退出当前帐号吗？',
-      content: '',
-      success:(res)=>{
-        if(res.cancel){
-          app.globalData.userInfo=null
-        }else{
-
-        }
+  },
+  setname:function(e){
+    this.setData({
+      sendsms: e.detail.value
+    })
+  },
+  savesendsms:function(){
+    var data={
+      code: this.data.sendsms,
+      phone:this.data.phone
+    }
+    utils.sendRrquest('verifysms', 1, data)
+    .then((res)=>{
+      if(res.data.status==='200'){
+        wx.showToast({
+          title: '绑定成功',
+          icon:'success'
+        })
+        wx.getStorage({
+          key: 'userInfo',
+          success: (res) => {
+            var userInfo=res.data
+            userInfo.phone=data.phone
+            wx.setStorage({
+              key: 'userInfo',
+              data: userInfo,
+            })
+          }
+          })
+        this.setData({
+          loginClose:'none'
+        })
+        wx.navigateTo({
+          url: '/pages/jianli/jianli',
+        })
+      }else{
+        wx.showModal({
+          title: '温馨提示',
+          content: '绑定失败',
+        })
       }
     })
   },
   gotojianli:function(){
-    console.log(app.globalData.userInfo)
-    if (app.globalData.userInfo){
-      wx.navigateTo({
-        url: '/pages/jianli/jianli',
-      })
-    }else{
-      //登录
-      this.setData({
-        loginClose: 'block'
-      })
-    }
-  
+    wx.getStorage({
+      key: 'userInfo',
+      success: (res) => {
+        if(res.data.phone){
+          wx.navigateTo({
+            url: '/pages/jianli/jianli',
+          })
+        }else{
+          //登录
+          this.setData({
+            loginClose: 'block'
+          })
+        }
+      },
+    })
+
   },
   loginClose:function(){
     this.setData({

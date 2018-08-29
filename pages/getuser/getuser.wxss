@@ -1,7 +1,7 @@
 image{
   display: block;
   width: 12rem;
-  height: 5.2rem;
+  height: 4rem;
   margin: 1rem auto;
 }
 view{

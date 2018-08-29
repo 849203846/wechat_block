@@ -47,6 +47,22 @@ Page({
   },
   onShow:function(){
     app.getuser()
+    // if (this.data.job_id==undefined||this.data.job_id=='undefined'){
+    //   wx.showModal({
+    //     title: '温馨提示',
+    //     content: '您还未添加求职意向,请前往我的简历添加求职意向',
+    //     success:function(){
+    //       wx.navigateTo({
+    //         url: '../jianli/jianli',
+    //       })
+    //     }
+    //   })
+    //   return;
+    // }
+    // console.log(this.data.job_id)
+    // var data={
+    //   job_id: this.data.job_id,//
+    // }
     // getposition
     utils.sendRrquest('getposition', 1, {})
     .then((res)=>{
